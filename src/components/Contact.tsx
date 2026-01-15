@@ -28,7 +28,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "(123) 456-7890", href: "tel:+1234567890" },
-    { icon: Mail, label: "Email", value: "support@jktechsolutions.com", href: "mailto:support@jktechsolutions.com" },
+    { icon: Mail, label: "Email", value: "support@jktechsolutions.com.au", href: "mailto:support@jktechsolutions.com.au" },
     { icon: MapPin, label: "Location", value: "Perth, Western Australia", href: "#" },
   ];
 
