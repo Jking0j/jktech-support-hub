@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -77,9 +77,9 @@ const Footer = () => {
             <h3 className="font-display font-bold text-foreground mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  (123) 456-7890
+                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <a href="mailto:support@jktechsolutions.com.au" className="text-muted-foreground hover:text-primary transition-colors">
+                  support@jktechsolutions.com.au
                 </a>
               </li>
               <li className="flex items-start gap-3">
