@@ -29,9 +29,9 @@ const About = () => {
               Technology Partners <span className="text-gradient">You Can Trust</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              At JKTechSolutions, we understand that technology is the backbone of modern business. 
+              At JKTechSolutions, we understand that technology is essential for modern life. 
               Our team of certified professionals is dedicated to providing reliable, efficient, 
-              and secure IT solutions that help your business thrive.
+              and secure IT solutions that help your home and business thrive.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">

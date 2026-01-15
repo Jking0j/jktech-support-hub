@@ -57,7 +57,7 @@ const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
           >
             From troubleshooting to full IT management, JKTechSolutions delivers 
-            reliable, fast, and secure technology support for businesses of all sizes.
+            reliable, fast, and secure technology support for homes and businesses of all sizes.
           </motion.p>
 
           <motion.div
