@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Users, Award, TrendingUp } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const features = [
   "Certified IT professionals with 10+ years experience",
@@ -10,17 +10,12 @@ const features = [
   "Regular updates and proactive monitoring",
 ];
 
-const stats = [
-  { icon: Users, value: "500+", label: "Happy Clients" },
-  { icon: Award, value: "15+", label: "Years Experience" },
-  { icon: TrendingUp, value: "99.9%", label: "Uptime Guaranteed" },
-];
 
 const About = () => {
   return (
     <section id="about" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,35 +49,6 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gradient-card rounded-xl p-6 border border-border shadow-card hover:shadow-elevated hover:border-primary/30 transition-all duration-300 flex items-center gap-6"
-              >
-                <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <stat.icon className="w-8 h-8 text-primary" />
-                </div>
-                <div>
-                  <div className="text-3xl font-display font-bold text-foreground">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
