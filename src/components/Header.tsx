@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -17,10 +17,6 @@ const Header = () => {
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="hidden md:flex items-center justify-end gap-6 py-2 text-sm text-muted-foreground border-b border-border/50">
-          <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Phone className="w-4 h-4" />
-            <span>(123) 456-7890</span>
-          </a>
           <a href="mailto:support@jktechsolutions.com.au" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Mail className="w-4 h-4" />
             <span>support@jktechsolutions.com.au</span>
