@@ -1,43 +1,71 @@
 import { motion } from "framer-motion";
 import { 
-  Monitor, 
+  Network, 
   Shield, 
   Cloud, 
-  Wrench, 
-  Network, 
-  HardDrive 
+  Globe, 
+  Wrench 
 } from "lucide-react";
 
 const services = [
   {
-    icon: Monitor,
-    title: "Desktop Support",
-    description: "Fast resolution for all your computer issues, from software glitches to hardware failures.",
+    icon: Network,
+    title: "IT Support & Networking",
+    description: "Complete network solutions from design to deployment.",
+    features: [
+      "Network design, setup, and optimisation",
+      "Wired and wireless infrastructure deployment",
+      "Router, switch, and firewall configuration",
+      "Network troubleshooting and performance improvement",
+      "Device, printer, and peripheral integration",
+    ],
   },
   {
     icon: Shield,
-    title: "Cybersecurity",
-    description: "Protect your business with advanced threat detection, firewalls, and security audits.",
+    title: "Cyber Security Fundamentals",
+    description: "Protect your business with comprehensive security solutions.",
+    features: [
+      "Network and system security assessments",
+      "Firewall and perimeter security configuration",
+      "Endpoint protection and access control",
+      "Multi-factor authentication (MFA) deployment",
+      "Data backup and recovery solutions",
+      "Security best-practice implementation",
+    ],
   },
   {
     icon: Cloud,
-    title: "Cloud Solutions",
-    description: "Seamless migration and management of cloud infrastructure for scalable operations.",
+    title: "Cloud & Microsoft 365 Solutions",
+    description: "Seamless cloud migration and Microsoft 365 expertise.",
+    features: [
+      "Microsoft 365 tenant setup and migration",
+      "Identity and access management (Entra ID)",
+      "Secure email and collaboration configuration",
+      "SharePoint and OneDrive deployment",
+      "Cloud-based backup solutions",
+    ],
+  },
+  {
+    icon: Globe,
+    title: "Website & Digital Infrastructure",
+    description: "Professional web presence and digital solutions.",
+    features: [
+      "Business website deployment and hosting",
+      "Domain management and SSL implementation",
+      "Website security hardening and maintenance",
+      "Cloud hosting support",
+    ],
   },
   {
     icon: Wrench,
-    title: "IT Maintenance",
-    description: "Proactive maintenance to prevent issues before they impact your business.",
-  },
-  {
-    icon: Network,
-    title: "Network Setup",
-    description: "Complete network design, installation, and optimization for peak performance.",
-  },
-  {
-    icon: HardDrive,
-    title: "Data Recovery",
-    description: "Expert data recovery services to retrieve your critical business information.",
+    title: "Ongoing IT Maintenance",
+    description: "Proactive maintenance to keep your systems running smoothly.",
+    features: [
+      "Ongoing IT support and system maintenance",
+      "Patch management and system updates",
+      "Preventative monitoring and issue resolution",
+      "Scheduled technical health checks",
+    ],
   },
 ];
 
@@ -80,9 +108,17 @@ const Services = () => {
               <h3 className="font-display text-xl font-bold mb-3 text-foreground">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground mb-4">
                 {service.description}
               </p>
+              <ul className="space-y-2">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

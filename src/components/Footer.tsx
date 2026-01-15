@@ -10,12 +10,11 @@ const Footer = () => {
   ];
 
   const services = [
-    "Desktop Support",
-    "Cybersecurity",
-    "Cloud Solutions",
-    "IT Maintenance",
-    "Network Setup",
-    "Data Recovery",
+    "IT Support & Networking",
+    "Cyber Security Fundamentals",
+    "Cloud & Microsoft 365 Solutions",
+    "Website & Digital Infrastructure",
+    "Ongoing IT Maintenance",
   ];
 
   return (
