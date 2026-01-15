@@ -146,22 +146,6 @@ const Contact = () => {
                 </div>
               </motion.a>
             ))}
-
-            <div className="bg-gradient-card rounded-xl p-8 border border-border shadow-card mt-8">
-              <h3 className="font-display text-xl font-bold mb-3 text-foreground">
-                Business Hours
-              </h3>
-              <div className="space-y-2 text-muted-foreground">
-                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed (Emergency support available)</p>
-              </div>
-              <div className="mt-4 pt-4 border-t border-border">
-                <p className="text-primary font-medium">
-                  🚨 24/7 Emergency Support Available
-                </p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
