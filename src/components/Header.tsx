@@ -21,9 +21,9 @@ const Header = () => {
             <Phone className="w-4 h-4" />
             <span>(123) 456-7890</span>
           </a>
-          <a href="mailto:support@jktechsolutions.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href="mailto:support@jktechsolutions.com.au" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Mail className="w-4 h-4" />
-            <span>support@jktechsolutions.com</span>
+            <span>support@jktechsolutions.com.au</span>
           </a>
         </div>
 
