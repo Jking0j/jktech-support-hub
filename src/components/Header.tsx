@@ -46,7 +46,11 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="hero" size="default">
+            <Button 
+              variant="hero" 
+              size="default"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Support
             </Button>
           </nav>
@@ -81,7 +85,15 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="w-full">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Get Support
               </Button>
             </nav>
