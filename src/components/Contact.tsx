@@ -5,27 +5,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
+    const phone = formData.get('phone') as string || null;
     const message = formData.get('message') as string;
-    
-    const subject = encodeURIComponent(`Support Request from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}`
-    );
-    
-    window.location.href = `mailto:support@jktechsolutions.com.au?subject=${subject}&body=${body}`;
+
+    const { error } = await supabase
+      .from('contact_enquiries')
+      .insert({ name, email, phone, message });
+
+    if (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      (e.target as HTMLFormElement).reset();
+    }
     
     setIsSubmitting(false);
   };
