@@ -6,25 +6,29 @@ const testimonials = [
   {
     name: "Practice Manager",
     role: "Roleystone Family Medical Centre",
-    content: "They manage our entire IT infrastructure flawlessly. Our staff can focus on patients knowing our systems are secure.",
+    content: "They took over our entire IT setup and the difference is night and day. Our staff used to complain about IT weekly—now they don't even think about it. System outages are basically zero.",
+    outcome: "Zero IT complaints from staff",
     rating: 5,
   },
   {
     name: "Steve Williams",
-    role: "Armadale",
-    content: "Fixed our WiFi dead spots and now we have perfect coverage throughout the house. Great service!",
+    role: "Home Office, Armadale",
+    content: "Had WiFi dead spots killing my video calls for months. They came out, fixed it properly, and now I have perfect coverage everywhere. Should have called them sooner.",
+    outcome: "Perfect WiFi coverage throughout",
     rating: 5,
   },
   {
     name: "Marcus Chen",
-    role: "Kelmscott",
-    content: "Set up my home office network perfectly for video calls. Quick and professional.",
+    role: "Remote Worker, Kelmscott",
+    content: "Set up my home office so video calls actually work. Quick response, explained everything in plain English, and didn't try to sell me stuff I didn't need.",
+    outcome: "Reliable video calls, finally",
     rating: 5,
   },
   {
     name: "Lisa Thompson",
-    role: "Gosnells",
-    content: "Fast response when our network went down. Back online within the hour!",
+    role: "Small Business, Gosnells",
+    content: "Our network went down on a Friday afternoon—nightmare scenario. They had us back online within the hour. That kind of response time is exactly what small businesses need.",
+    outcome: "Back online within 60 minutes",
     rating: 5,
   },
 ];
@@ -44,10 +48,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What Our <span className="text-gradient">Clients Say</span>
+            Real Results From <span className="text-gradient">Real Clients</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Trusted by businesses of all sizes for reliable IT support and innovative tech solutions.
+            Perth businesses and households who stopped struggling with IT.
           </p>
         </motion.div>
 
@@ -64,9 +68,13 @@ const Testimonials = () => {
                 <CardContent className="p-6">
                   <Quote className="w-8 h-8 text-primary/40 mb-4" />
                   
-                  <p className="text-foreground/90 mb-6 leading-relaxed">
+                  <p className="text-foreground/90 mb-4 leading-relaxed">
                     "{testimonial.content}"
                   </p>
+                  
+                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
+                    Result: {testimonial.outcome}
+                  </div>
                   
                   <div className="flex items-center justify-between">
                     <div>

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Clock, Headphones } from "lucide-react";
+import { ArrowRight, Clock, Phone, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const stats = [
-    { icon: Shield, label: "Secure Solutions", value: "100%" },
-    { icon: Clock, label: "Response Time", value: "<1hr" },
-    { icon: Headphones, label: "24/7 Support", value: "Always" },
+    { icon: Clock, label: "Avg Response Time", value: "<60 min" },
+    { icon: Phone, label: "Local Perth Support", value: "No Offshore" },
+    { icon: Award, label: "Degree Qualified", value: "IT Professional" },
   ];
 
   return (
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
-              Professional IT Support & Solutions
+              IT Support for Small Businesses in Perth
             </span>
           </motion.div>
 
@@ -45,9 +45,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           >
-            Expert Tech Support
+            Stop Losing Money
             <br />
-            <span className="text-gradient">When You Need It Most</span>
+            <span className="text-gradient">To IT Downtime</span>
           </motion.h1>
 
           <motion.p
@@ -56,8 +56,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
           >
-            From troubleshooting to full IT management, JKTechSolutions delivers 
-            reliable, fast, and secure technology support for homes and businesses of all sizes.
+            Built for small businesses (5-50 staff) who need reliable IT without the enterprise price tag. 
+            No offshore support. No lock-in contracts. We actually answer the phone.
           </motion.p>
 
           <motion.div
@@ -71,7 +71,7 @@ const Hero = () => {
               size="xl"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get Started Now
+              Book a Free IT Health Check
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button 
@@ -79,7 +79,7 @@ const Hero = () => {
               size="xl"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View Services
+              See How We Help
             </Button>
           </motion.div>
 
