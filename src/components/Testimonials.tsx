@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     name: "Dr. Amanda Harris",
-    role: "Owner, Roleystone Family Medical Centre",
+    role: "Practice Manager, Roleystone Family Medical Centre",
     content: "They manage our entire IT infrastructure flawlessly. Our staff can focus on patients knowing our systems are secure.",
     rating: 5,
   },
