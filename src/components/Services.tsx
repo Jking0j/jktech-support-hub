@@ -1,70 +1,54 @@
 import { motion } from "framer-motion";
 import { 
-  Network, 
+  Headphones, 
   Shield, 
   Cloud, 
-  Globe, 
   Wrench 
 } from "lucide-react";
 
 const services = [
   {
-    icon: Network,
-    title: "IT Support & Networking",
-    description: "Complete network solutions from design to deployment.",
-    features: [
-      "Network design, setup, and optimisation",
-      "Wired and wireless infrastructure deployment",
-      "Router, switch, and firewall configuration",
-      "Network troubleshooting and performance improvement",
-      "Device, printer, and peripheral integration",
+    icon: Headphones,
+    title: "IT Support That Actually Responds",
+    problem: "Tired of waiting days for IT help while your team can't work?",
+    description: "Get your team back online fast. We respond in under 60 minutes and fix issues remotely or on-site—so your business keeps running.",
+    outcomes: [
+      "Less downtime = more productive staff",
+      "No more chasing technicians for updates",
+      "Local Perth support, not offshore call centres",
     ],
   },
   {
     icon: Shield,
-    title: "Cyber Security Fundamentals",
-    description: "Protect your business with comprehensive security solutions.",
-    features: [
-      "Network and system security assessments",
-      "Firewall and perimeter security configuration",
-      "Endpoint protection and access control",
-      "Multi-factor authentication (MFA) deployment",
-      "Data backup and recovery solutions",
-      "Security best-practice implementation",
+    title: "Security That Stops the Threats",
+    problem: "Worried about phishing emails, ransomware, or data breaches?",
+    description: "Protect your business before it's too late. We implement real security measures that stop threats—not just tick boxes.",
+    outcomes: [
+      "Stop worrying about phishing and breaches",
+      "Secure backups so you never lose data",
+      "Staff trained to spot scams before they click",
     ],
   },
   {
     icon: Cloud,
-    title: "Cloud & Microsoft 365 Solutions",
-    description: "Seamless cloud migration and Microsoft 365 expertise.",
-    features: [
-      "Microsoft 365 tenant setup and migration",
-      "Identity and access management (Entra ID)",
-      "Secure email and collaboration configuration",
-      "SharePoint and OneDrive deployment",
-      "Cloud-based backup solutions",
-    ],
-  },
-  {
-    icon: Globe,
-    title: "Website & Digital Infrastructure",
-    description: "Professional web presence and digital solutions.",
-    features: [
-      "Business website deployment and hosting",
-      "Domain management and SSL implementation",
-      "Website security hardening and maintenance",
-      "Cloud hosting support",
+    title: "Microsoft 365 Done Right",
+    problem: "Paying for Microsoft 365 but not getting the full value?",
+    description: "We set up and manage your Microsoft 365 properly—so your team can collaborate securely from anywhere.",
+    outcomes: [
+      "Email that works, every time",
+      "Secure file sharing with SharePoint & OneDrive",
+      "Proper access controls and user management",
     ],
   },
   {
     icon: Wrench,
-    title: "Ongoing IT Maintenance",
-    description: "Proactive maintenance to keep your systems running smoothly.",
-    features: [
-      "Ongoing IT support and system maintenance",
-      "Patch management and system updates",
-      "Preventative monitoring and issue resolution",
-      "Scheduled technical health checks",
+    title: "Proactive Maintenance",
+    problem: "Sick of things breaking and costing you money?",
+    description: "We monitor and maintain your systems so problems get fixed before they become emergencies.",
+    outcomes: [
+      "Fewer surprises and emergency callouts",
+      "Systems that stay fast and up-to-date",
+      "Monthly health checks and reports",
     ],
   },
 ];
@@ -81,18 +65,18 @@ const Services = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            Our Services
+            What We Fix
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Comprehensive Tech <span className="text-gradient">Solutions</span>
+            4 Ways We Keep Your <span className="text-gradient">Business Running</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From day-to-day support to complex infrastructure projects, 
-            we have the expertise to keep your technology running smoothly.
+            We don't do everything. We do these four things exceptionally well 
+            for small businesses who can't afford IT problems.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -105,20 +89,27 @@ const Services = () => {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
+              
+              <p className="text-sm text-primary font-medium mb-2 italic">
+                {service.problem}
+              </p>
+              
               <h3 className="font-display text-xl font-bold mb-3 text-foreground">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-5">
                 {service.description}
               </p>
-              <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="text-sm text-muted-foreground flex items-start gap-2">
+              
+              <div className="space-y-2.5 pt-4 border-t border-border/50">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium">What you get:</p>
+                {service.outcomes.map((outcome, outcomeIndex) => (
+                  <div key={outcomeIndex} className="text-sm text-foreground flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    {feature}
-                  </li>
+                    {outcome}
+                  </div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>

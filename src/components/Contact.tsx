@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -58,14 +58,14 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            Get In Touch
+            Free IT Health Check
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Ready to Get <span className="text-gradient">Started?</span>
+            Not Sure What You Need? <span className="text-gradient">Let's Talk.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Contact us today for a free consultation and discover how we can help 
-            streamline your technology operations.
+            Book a free 15-minute call and we'll tell you exactly where your IT is weak—and 
+            what to do about it. No sales pitch, just honest advice.
           </p>
         </motion.div>
 
@@ -118,21 +118,24 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  How can we help?
+                  What's your biggest IT headache right now?
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   required
                   rows={5}
-                  placeholder="Tell us about your tech support needs..."
+                  placeholder="e.g., Our WiFi keeps dropping, we're worried about security, staff can't work remotely..."
                   className="bg-secondary/50 border-border focus:border-primary resize-none"
                 />
               </div>
               <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Book My Free IT Health Check"}
                 <Send className="w-5 h-5" />
               </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                No obligation. No sales pitch. Just helpful advice.
+              </p>
             </form>
           </motion.div>
 
@@ -143,6 +146,27 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
+            <div className="bg-gradient-card rounded-xl p-6 border border-primary/30 shadow-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Clock className="w-6 h-6 text-primary" />
+                <h3 className="font-display text-lg font-bold">What Happens Next?</h3>
+              </div>
+              <ol className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+                  <span>We'll reply within 24 hours to book a quick call</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+                  <span>15-minute call to understand your situation</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+                  <span>You'll get honest advice on what to fix first</span>
+                </li>
+              </ol>
+            </div>
+
             {contactInfo.map((info, index) => (
               <motion.a
                 key={info.label}
