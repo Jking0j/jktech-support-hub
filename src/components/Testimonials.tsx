@@ -4,27 +4,27 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "CEO, TechStart Inc.",
-    content: "JKTechSolutions transformed our IT infrastructure. Their 24/7 support has been invaluable for our growing business. Response times are incredibly fast!",
+    name: "Dr. Amanda Harris",
+    role: "Owner, Roleystone Family Medical Centre",
+    content: "JKTechSolutions has been instrumental in managing our entire IT infrastructure. From patient data security to seamless network connectivity across our practice, they handle everything professionally. Our staff can focus on patient care knowing our systems are in expert hands.",
     rating: 5,
   },
   {
-    name: "David Chen",
-    role: "Operations Manager, FinCore",
-    content: "The cybersecurity solutions they implemented gave us peace of mind. Professional team that truly understands enterprise-level security needs.",
+    name: "Steve & Karen Williams",
+    role: "Roleystone Homeowners",
+    content: "Our home WiFi was a nightmare with constant dropouts. JKTechSolutions came out, optimised our network setup, and now we have perfect coverage throughout the house. Brilliant service!",
     rating: 5,
   },
   {
-    name: "Emily Rodriguez",
-    role: "Founder, CreativeHub",
-    content: "Migrating to the cloud was seamless thanks to their expertise. Our team productivity increased by 40% after the transition.",
+    name: "Marcus Chen",
+    role: "Work From Home Professional",
+    content: "Needed my home office network sorted for video calls and large file transfers. They set up everything perfectly and even helped secure our smart home devices. Highly recommend!",
     rating: 5,
   },
   {
-    name: "Michael Thompson",
-    role: "IT Director, HealthPlus",
-    content: "Outstanding network management and proactive monitoring. They identify and resolve issues before they impact our operations.",
+    name: "Lisa Thompson",
+    role: "Local Resident",
+    content: "Quick response when our home network went down. They diagnosed the issue remotely and had us back online within the hour. Fair pricing and genuinely helpful advice.",
     rating: 5,
   },
 ];
