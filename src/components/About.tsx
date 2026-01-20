@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const features = [
-  "Certified IT professionals with 10+ years experience",
+  "Certified IT Professionals",
   "Custom solutions tailored to your business needs",
   "Transparent pricing with no hidden fees",
   "Remote and on-site support available",
