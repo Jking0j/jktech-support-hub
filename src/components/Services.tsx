@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
 import { 
-  Headphones, 
+  Network, 
   Shield, 
   Cloud, 
-  Wrench 
+  Wrench,
+  GraduationCap
 } from "lucide-react";
 
 const services = [
   {
-    icon: Headphones,
-    title: "IT Support That Actually Responds",
-    problem: "Tired of waiting days for IT help while your team can't work?",
-    description: "Get your team back online fast. We respond in under 60 minutes and fix issues remotely or on-site—so your business keeps running.",
+    icon: Network,
+    title: "Networking & Infrastructure",
+    problem: "Network slow, dropping out, or just not built for growth?",
+    description: "Built by a degree-qualified network engineer. We design, install, and optimise networks that actually perform—not just 'work'.",
     outcomes: [
-      "Less downtime = more productive staff",
-      "No more chasing technicians for updates",
-      "Local Perth support, not offshore call centres",
+      "Faster, more reliable connections for your team",
+      "Proper network design that scales with you",
+      "Infrastructure upgrades done right the first time",
     ],
+    badge: "Degree Qualified",
   },
   {
     icon: Shield,
@@ -42,13 +44,13 @@ const services = [
   },
   {
     icon: Wrench,
-    title: "Proactive Maintenance",
-    problem: "Sick of things breaking and costing you money?",
-    description: "We monitor and maintain your systems so problems get fixed before they become emergencies.",
+    title: "IT Support & Maintenance",
+    problem: "Tired of waiting days for IT help or things constantly breaking?",
+    description: "We respond in under 60 minutes and proactively maintain your systems so problems get fixed before they become emergencies.",
     outcomes: [
+      "Less downtime = more productive staff",
       "Fewer surprises and emergency callouts",
-      "Systems that stay fast and up-to-date",
-      "Monthly health checks and reports",
+      "Local Perth support, not offshore call centres",
     ],
   },
 ];
@@ -86,8 +88,16 @@ const Services = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group bg-gradient-card rounded-xl p-8 border border-border shadow-card hover:shadow-elevated hover:border-primary/30 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <service.icon className="w-7 h-7 text-primary" />
+                </div>
+                {service.badge && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
+                    <GraduationCap className="w-3.5 h-3.5" />
+                    {service.badge}
+                  </span>
+                )}
               </div>
               
               <p className="text-sm text-primary font-medium mb-2 italic">
