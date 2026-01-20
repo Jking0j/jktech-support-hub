@@ -6,25 +6,25 @@ const testimonials = [
   {
     name: "Dr. Amanda Harris",
     role: "Owner, Roleystone Family Medical Centre",
-    content: "JKTechSolutions has been instrumental in managing our entire IT infrastructure. From patient data security to seamless network connectivity across our practice, they handle everything professionally. Our staff can focus on patient care knowing our systems are in expert hands.",
+    content: "They manage our entire IT infrastructure flawlessly. Our staff can focus on patients knowing our systems are secure.",
     rating: 5,
   },
   {
-    name: "Steve & Karen Williams",
-    role: "Roleystone Homeowners",
-    content: "Our home WiFi was a nightmare with constant dropouts. JKTechSolutions came out, optimised our network setup, and now we have perfect coverage throughout the house. Brilliant service!",
+    name: "Steve Williams",
+    role: "Armadale",
+    content: "Fixed our WiFi dead spots and now we have perfect coverage throughout the house. Great service!",
     rating: 5,
   },
   {
     name: "Marcus Chen",
-    role: "Work From Home Professional",
-    content: "Needed my home office network sorted for video calls and large file transfers. They set up everything perfectly and even helped secure our smart home devices. Highly recommend!",
+    role: "Kelmscott",
+    content: "Set up my home office network perfectly for video calls. Quick and professional.",
     rating: 5,
   },
   {
     name: "Lisa Thompson",
-    role: "Local Resident",
-    content: "Quick response when our home network went down. They diagnosed the issue remotely and had us back online within the hour. Fair pricing and genuinely helpful advice.",
+    role: "Gosnells",
+    content: "Fast response when our network went down. Back online within the hour!",
     rating: 5,
   },
 ];
