@@ -1,57 +1,63 @@
 import { motion } from "framer-motion";
 import { 
-  Network, 
   Shield, 
-  Cloud, 
-  Wrench,
-  GraduationCap
+  Zap, 
+  Server,
+  GraduationCap,
+  Building2,
+  Home
 } from "lucide-react";
 
 const services = [
   {
-    icon: Network,
-    title: "Networking & Infrastructure",
-    problem: "Network slow, dropping out, or just not built for growth?",
-    description: "Built by a degree-qualified network engineer. We design, install, and optimise networks that actually perform—not just 'work'.",
+    icon: Shield,
+    title: "Network Security",
+    problem: "Worried about hackers, data breaches, or unsecured WiFi?",
+    description: "Protect your network from threats with proper firewall configuration, secure WiFi setup, and vulnerability assessments. Built by a degree-qualified network engineer.",
     outcomes: [
-      "Faster, more reliable connections for your team",
-      "Proper network design that scales with you",
-      "Infrastructure upgrades done right the first time",
+      "Firewall setup and hardening",
+      "Secure WiFi with proper encryption",
+      "Network vulnerability assessments",
+      "Guest network isolation",
     ],
     badge: "Degree Qualified",
   },
   {
-    icon: Shield,
-    title: "Security That Stops the Threats",
-    problem: "Worried about phishing emails, ransomware, or data breaches?",
-    description: "Protect your business before it's too late. We implement real security measures that stop threats—not just tick boxes.",
+    icon: Zap,
+    title: "Network Optimisation",
+    problem: "Slow speeds, dropouts, or buffering ruining your productivity?",
+    description: "Get the performance your network should be delivering. We diagnose bottlenecks and optimise your setup for maximum speed and reliability.",
     outcomes: [
-      "Stop worrying about phishing and breaches",
-      "Secure backups so you never lose data",
-      "Staff trained to spot scams before they click",
+      "Speed and latency optimisation",
+      "WiFi coverage improvements",
+      "Bandwidth management",
+      "Dead spot elimination",
     ],
   },
   {
-    icon: Cloud,
-    title: "Microsoft 365 Done Right",
-    problem: "Paying for Microsoft 365 but not getting the full value?",
-    description: "We set up and manage your Microsoft 365 properly—so your team can collaborate securely from anywhere.",
+    icon: Server,
+    title: "Infrastructure Upgrades",
+    problem: "Outdated equipment or network not built for growth?",
+    description: "Future-proof your network with properly planned infrastructure upgrades. We design and implement solutions that scale with your needs.",
     outcomes: [
-      "Email that works, every time",
-      "Secure file sharing with SharePoint & OneDrive",
-      "Proper access controls and user management",
+      "Network design and planning",
+      "Router and switch upgrades",
+      "Cabling and access point installation",
+      "Seamless migration with zero downtime",
     ],
   },
+];
+
+const audiences = [
   {
-    icon: Wrench,
-    title: "IT Support & Maintenance",
-    problem: "Tired of waiting days for IT help or things constantly breaking?",
-    description: "We respond in under 60 minutes and proactively maintain your systems so problems get fixed before they become emergencies.",
-    outcomes: [
-      "Less downtime = more productive staff",
-      "Fewer surprises and emergency callouts",
-      "Local Perth support, not offshore call centres",
-    ],
+    icon: Building2,
+    title: "Small & Medium Businesses",
+    description: "5-50 staff needing reliable, secure networks that don't break the bank",
+  },
+  {
+    icon: Home,
+    title: "Home Networks",
+    description: "Work-from-home setups, smart homes, and households wanting better WiFi",
   },
 ];
 
@@ -67,18 +73,19 @@ const Services = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            What We Fix
+            Network Specialist
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            4 Ways We Keep Your <span className="text-gradient">Business Running</span>
+            3 Ways We Fix Your <span className="text-gradient">Network Problems</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We don't do everything. We do these four things exceptionally well 
-            for small businesses who can't afford IT problems.
+            Degree-qualified network engineer specialising in security, optimisation, 
+            and infrastructure upgrades for SMEs and home networks in Perth.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -107,7 +114,7 @@ const Services = () => {
               <h3 className="font-display text-xl font-bold mb-3 text-foreground">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-5">
+              <p className="text-muted-foreground mb-5 text-sm">
                 {service.description}
               </p>
               
@@ -119,6 +126,39 @@ const Services = () => {
                     {outcome}
                   </div>
                 ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Who We Help */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <h3 className="font-display text-2xl font-bold mb-2">Who We Help</h3>
+          <p className="text-muted-foreground">Expert network solutions for businesses and homes</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {audiences.map((audience, index) => (
+            <motion.div
+              key={audience.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex items-start gap-4 bg-gradient-card rounded-xl p-6 border border-border"
+            >
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <audience.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-display font-bold text-foreground mb-1">{audience.title}</h4>
+                <p className="text-sm text-muted-foreground">{audience.description}</p>
               </div>
             </motion.div>
           ))}
