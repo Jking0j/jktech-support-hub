@@ -3,6 +3,7 @@ import {
   Shield, 
   Zap, 
   Server,
+  Wrench,
   GraduationCap,
   Building2,
   Home
@@ -46,6 +47,18 @@ const services = [
       "Seamless migration with zero downtime",
     ],
   },
+  {
+    icon: Wrench,
+    title: "Maintenance & Support",
+    problem: "Tired of network issues disrupting your day?",
+    description: "Keep your network running smoothly with proactive maintenance and responsive support. We monitor, update, and fix issues before they become problems.",
+    outcomes: [
+      "Proactive network monitoring",
+      "Regular firmware and security updates",
+      "Fast response to issues",
+      "Ongoing performance optimisation",
+    ],
+  },
 ];
 
 const audiences = [
@@ -76,7 +89,7 @@ const Services = () => {
             Network Specialist
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            3 Ways We Fix Your <span className="text-gradient">Network Problems</span>
+            4 Ways We Fix Your <span className="text-gradient">Network Problems</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Degree-qualified network engineer specialising in security, optimisation, 
@@ -85,7 +98,7 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
