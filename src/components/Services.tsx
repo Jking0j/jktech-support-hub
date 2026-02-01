@@ -6,7 +6,8 @@ import {
   Wrench,
   GraduationCap,
   Building2,
-  Home
+  Home,
+  BrainCircuit
 } from "lucide-react";
 
 const services = [
@@ -59,6 +60,18 @@ const services = [
       "Ongoing performance optimisation",
     ],
   },
+  {
+    icon: BrainCircuit,
+    title: "AI Solutions & Integrations",
+    problem: "Want to leverage AI but don't know where to start?",
+    description: "Unlock the power of artificial intelligence for your business. We help you identify, implement, and integrate AI tools that streamline operations and boost productivity.",
+    outcomes: [
+      "AI tool selection and setup",
+      "Workflow automation with AI",
+      "Custom AI integrations",
+      "Staff training on AI tools",
+    ],
+  },
 ];
 
 const audiences = [
@@ -89,7 +102,7 @@ const Services = () => {
             Network Specialist
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            4 Ways We Fix Your <span className="text-gradient">Network Problems</span>
+            5 Ways We Fix Your <span className="text-gradient">Network Problems</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Degree-qualified network engineer specialising in security, optimisation, 
