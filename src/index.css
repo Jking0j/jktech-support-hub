@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 /* JKTechSolutions — Navy Trust design system
    Palette: #0f1b3d deep navy · #1e3a5f mid navy · #3b6fa0 blue accent · #e8edf3 off-white */

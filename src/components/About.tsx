@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { X, Check, Award } from "lucide-react";
+import { X, Check, GraduationCap } from "lucide-react";
 
 const badItems = [
   "Offshore call centres",
@@ -40,11 +40,11 @@ const About = () => {
 
             <div className="mt-10 flex items-center gap-4 border-t border-border pt-8">
               <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-navy-deep text-off-white">
-                <Award className="h-6 w-6" strokeWidth={1.5} />
+                <GraduationCap className="h-6 w-6" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="font-bold text-navy-deep">Certified IT Professionals</p>
-                <p className="text-sm text-accent">Degree-qualified network engineer</p>
+                <p className="font-bold text-navy-deep">Degree-Qualified Engineer</p>
+                <p className="text-sm text-accent">Network security & infrastructure</p>
               </div>
             </div>
           </motion.div>

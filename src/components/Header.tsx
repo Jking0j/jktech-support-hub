@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useLocation, Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
+  // Services/About only exist on the homepage — prefix with "/" so they
+  // still resolve correctly from other pages (e.g. /ai-compliance).
+  // Contact works everywhere because every page has an id="contact" section.
   const navItems = [
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
+    { label: "Services", href: isHome ? "#services" : "/#services" },
+    { label: "About", href: isHome ? "#about" : "/#about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -19,14 +25,14 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-navy-deep">
             <span className="font-display text-sm font-bold text-off-white">JK</span>
           </div>
           <span className="font-display text-lg font-bold tracking-tight text-navy-deep">
             JKTechSolutions
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (

@@ -8,6 +8,7 @@ import {
   Home,
   GraduationCap,
   BrainCircuit,
+  ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -41,6 +42,7 @@ const services = [
     title: "AI Solutions & Integrations",
     description:
       "Identify, implement, and integrate AI tools that streamline operations and boost productivity.",
+    link: { href: "/ai-compliance", label: "Allied health? See our AI Compliance Audit" },
   },
 ];
 
@@ -106,6 +108,15 @@ const Services = () => {
               <p className="text-sm leading-relaxed text-off-white/60">
                 {service.description}
               </p>
+              {service.link && (
+                <a
+                  href={service.link.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-accent transition-colors hover:text-off-white"
+                >
+                  {service.link.label}
+                  <ArrowRight className="h-3 w-3" />
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

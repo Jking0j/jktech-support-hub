@@ -16,7 +16,8 @@ const Footer = () => {
             </div>
             <p className="text-sm leading-relaxed">
               Professional network security, optimisation, and infrastructure for Perth
-              SMEs and home networks.
+              SMEs and home networks. Also supporting allied health practices with AI
+              compliance.
             </p>
           </div>
 
@@ -30,6 +31,7 @@ const Footer = () => {
               <li><a href="#services" className="hover:text-accent transition-colors">Infrastructure Upgrades</a></li>
               <li><a href="#services" className="hover:text-accent transition-colors">Maintenance & Support</a></li>
               <li><a href="#services" className="hover:text-accent transition-colors">AI Solutions</a></li>
+              <li><a href="/ai-compliance" className="hover:text-accent transition-colors">AI Compliance Audits</a></li>
             </ul>
           </div>
 
