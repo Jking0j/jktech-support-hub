@@ -24,7 +24,7 @@ const AIComplianceScope = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
               Scope, Plainly
             </span>
             <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">
@@ -56,7 +56,7 @@ const AIComplianceScope = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-sm border-l-4 border-accent bg-card p-6 shadow-card"
             >
-              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-accent">
+              <h4 className="mb-5 font-mono text-[10px] uppercase tracking-[0.15em] text-accent">
                 What This Is
               </h4>
               <ul className="space-y-3">
@@ -76,7 +76,7 @@ const AIComplianceScope = () => {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="rounded-sm border-l-4 border-border bg-card p-6 shadow-card"
             >
-              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              <h4 className="mb-5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
                 What This Isn't
               </h4>
               <ul className="space-y-3">

@@ -24,7 +24,7 @@ const AIComplianceHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="mb-6 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
             AI Compliance for Allied Health
           </span>
         </motion.div>
@@ -123,7 +123,7 @@ const AIComplianceHero = () => {
           >
             <div className="mb-6 flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-xs font-medium uppercase tracking-widest text-off-white/60">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/60">
                 AI Tool Register — Preview
               </span>
             </div>
@@ -142,7 +142,7 @@ const AIComplianceHero = () => {
               ))}
             </div>
 
-            <div className="mt-8 flex items-center justify-between border-t border-off-white/10 pt-4 text-[10px] uppercase tracking-widest text-off-white/40">
+            <div className="mt-8 flex items-center justify-between border-t border-off-white/10 pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/40">
               <span>Assessed against APP 1.7</span>
               <span>Reviewed Jul 2026</span>
             </div>

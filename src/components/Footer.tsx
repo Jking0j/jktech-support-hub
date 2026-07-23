@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-deep border-t border-off-white/10 py-16 text-off-white/60">
+    <footer className="border-t border-off-white/10 bg-navy-deep py-16 text-off-white/60">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -15,44 +17,41 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm leading-relaxed">
-              Professional network security, optimisation, and infrastructure for Perth
-              SMEs and home networks. Also supporting allied health practices with AI
-              compliance.
+              Network infrastructure, IT support and AI compliance auditing for
+              businesses in Perth, Western Australia.
             </p>
           </div>
 
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-widest text-off-white">
+            <h4 className="mb-6 font-mono text-[10px] uppercase tracking-[0.18em] text-off-white">
               Services
             </h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#services" className="hover:text-accent transition-colors">Network Security</a></li>
-              <li><a href="#services" className="hover:text-accent transition-colors">Network Optimisation</a></li>
-              <li><a href="#services" className="hover:text-accent transition-colors">Infrastructure Upgrades</a></li>
-              <li><a href="#services" className="hover:text-accent transition-colors">Maintenance & Support</a></li>
-              <li><a href="#services" className="hover:text-accent transition-colors">AI Solutions</a></li>
-              <li><a href="/ai-compliance" className="hover:text-accent transition-colors">AI Compliance Audits</a></li>
+              <li><a href="/#services" className="transition-colors hover:text-accent">Managed IT &amp; support</a></li>
+              <li><a href="/#services" className="transition-colors hover:text-accent">Network infrastructure</a></li>
+              <li><a href="/#services" className="transition-colors hover:text-accent">Secure decommissioning</a></li>
+              <li><Link to="/ai-compliance" className="transition-colors hover:text-accent">AI compliance audits</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-widest text-off-white">
+            <h4 className="mb-6 font-mono text-[10px] uppercase tracking-[0.18em] text-off-white">
               Company
             </h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
-              <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
+              <li><a href="/#about" className="transition-colors hover:text-accent">How we work</a></li>
+              <li><a href="/#testimonials" className="transition-colors hover:text-accent">Client feedback</a></li>
+              <li><a href="/#contact" className="transition-colors hover:text-accent">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-widest text-off-white">
+            <h4 className="mb-6 font-mono text-[10px] uppercase tracking-[0.18em] text-off-white">
               Contact
             </h4>
             <a
               href="mailto:support@jktechsolutions.com.au"
-              className="block text-sm font-medium text-off-white hover:text-accent transition-colors"
+              className="block text-sm font-medium text-off-white transition-colors hover:text-accent"
             >
               support@jktechsolutions.com.au
             </a>
@@ -60,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-off-white/10 pt-8 text-center text-[10px] uppercase tracking-widest">
-          © {year} JKTechSolutions. All rights reserved.
+        <div className="mt-16 border-t border-off-white/10 pt-8 font-mono text-[10px] uppercase tracking-[0.18em]">
+          © {year} JKTechSolutions
         </div>
       </div>
     </footer>

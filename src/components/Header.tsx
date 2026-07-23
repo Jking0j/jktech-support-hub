@@ -13,6 +13,7 @@ const Header = () => {
   // Contact works everywhere because every page has an id="contact" section.
   const navItems = [
     { label: "Services", href: isHome ? "#services" : "/#services" },
+    { label: "AI Compliance", href: "/ai-compliance" },
     { label: "About", href: isHome ? "#about" : "/#about" },
     { label: "Contact", href: "#contact" },
   ];

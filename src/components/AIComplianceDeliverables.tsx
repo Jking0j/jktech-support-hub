@@ -45,7 +45,7 @@ const AIComplianceDeliverables = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-2xl"
         >
-          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
             What You Get
           </span>
           <h2 className="font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">

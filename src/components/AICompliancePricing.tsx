@@ -36,7 +36,7 @@ const AICompliancePricing = () => {
           transition={{ duration: 0.5 }}
           className="mb-14 max-w-2xl"
         >
-          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
             Fixed Price
           </span>
           <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">

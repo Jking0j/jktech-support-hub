@@ -1,62 +1,45 @@
 import { motion } from "framer-motion";
-import {
-  Shield,
-  Zap,
-  Server,
-  Wrench,
-  Building2,
-  Home,
-  GraduationCap,
-  BrainCircuit,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const services = [
+const tracks = [
   {
-    icon: Shield,
-    title: "Network Security",
+    label: "01",
+    title: "Managed IT & infrastructure",
+    audience: "Perth businesses, 5–50 staff",
     description:
-      "Firewall hardening, secure WiFi, and vulnerability assessments — built by a degree-qualified network engineer.",
-    badge: "Degree Qualified",
+      "Ongoing support, network design and hardening, hardware refreshes, and the infrastructure work that sits underneath it.",
+    points: [
+      "Switching, routing and firewall configuration",
+      "Secure wireless and structured cabling",
+      "Windows domain, Group Policy and Microsoft 365",
+      "Endpoint reimaging and lifecycle management",
+    ],
   },
   {
-    icon: Zap,
-    title: "Network Optimisation",
+    label: "02",
+    title: "AI compliance audits",
+    audience: "Allied health practices",
     description:
-      "Diagnose bottlenecks and get the performance your network should already be delivering.",
-  },
-  {
-    icon: Server,
-    title: "Infrastructure Upgrades",
-    description:
-      "Design and implement scalable network infrastructure that grows with your business.",
-  },
-  {
-    icon: Wrench,
-    title: "Maintenance & Support",
-    description:
-      "Proactive monitoring, updates, and rapid response so issues never become downtime.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Solutions & Integrations",
-    description:
-      "Identify, implement, and integrate AI tools that streamline operations and boost productivity.",
-    link: { href: "/ai-compliance", label: "Allied health? See our AI Compliance Audit" },
+      "A technical assessment of the AI and automated tools in your practice, documented against the Privacy Act amendments taking effect in December.",
+    points: [
+      "AI and automation tool register",
+      "Data flow mapping per tool",
+      "Vendor residency and retention checks",
+      "Documented assessment for your lawyer to review",
+    ],
+    href: "/ai-compliance",
+    cta: "See the full scope",
   },
 ];
 
-const audiences = [
-  {
-    icon: Building2,
-    title: "Small & Medium Businesses",
-    description: "5–50 staff needing reliable, secure networks that don't break the bank.",
-  },
-  {
-    icon: Home,
-    title: "Home Networks",
-    description: "Work-from-home setups, smart homes, and households wanting better WiFi.",
-  },
+const stack = [
+  { group: "Switching & routing", items: ["Cisco Catalyst", "Cisco Meraki", "Juniper EX"] },
+  { group: "Wireless & voice", items: ["Cisco Aironet", "Meraki AP", "Yealink VoIP"] },
+  { group: "Security", items: ["Firewall deployment", "Network segmentation", "VLAN design"] },
+  { group: "Data sanitisation", items: ["NIST 800-88", "Blancco", "Erasure certificates"] },
+  { group: "Microsoft", items: ["Windows Server", "Active Directory", "Microsoft 365"] },
+  { group: "Endpoint", items: ["Dell", "Lenovo", "Imaging & deployment"] },
 ];
 
 const Services = () => {
@@ -70,85 +53,97 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-2xl"
         >
-          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Services
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+            What we do
           </span>
-          <h2 className="font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
-            Five ways we fix your network.
+          <h2 className="mt-4 font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
+            Two kinds of work.
           </h2>
-          <p className="mt-5 text-lg text-off-white/60">
-            Specialised network solutions for Perth SMEs and home networks.
-          </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+        {/* Two tracks */}
+        <div className="grid gap-px bg-off-white/10 md:grid-cols-2">
+          {tracks.map((track, index) => (
             <motion.div
-              key={service.title}
+              key={track.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="group flex flex-col border border-off-white/10 bg-navy-mid/20 p-8 transition-colors hover:bg-navy-mid/40"
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="flex flex-col bg-navy-deep p-8 lg:p-10"
             >
-              <div className="mb-6 flex items-start justify-between">
-                <div className="rounded-sm bg-accent/15 p-3 text-accent">
-                  <service.icon className="h-6 w-6" strokeWidth={1.5} />
-                </div>
-                {service.badge && (
-                  <span className="inline-flex items-center gap-1 rounded-full border border-accent px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
-                    <GraduationCap className="h-3 w-3" />
-                    {service.badge}
-                  </span>
-                )}
+              <div className="flex items-baseline gap-4">
+                <span className="font-mono text-sm text-accent">{track.label}</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-off-white/40">
+                  {track.audience}
+                </span>
               </div>
-              <h3 className="mb-3 font-display text-xl font-bold text-off-white">
-                {service.title}
+
+              <h3 className="mt-4 font-display text-2xl font-bold text-off-white">
+                {track.title}
               </h3>
-              <p className="text-sm leading-relaxed text-off-white/60">
-                {service.description}
+              <p className="mt-4 text-sm leading-relaxed text-off-white/60">
+                {track.description}
               </p>
-              {service.link && (
-                <a
-                  href={service.link.href}
-                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-accent transition-colors hover:text-off-white"
+
+              <ul className="mt-8 space-y-3 border-t border-off-white/10 pt-6">
+                {track.points.map((point) => (
+                  <li key={point} className="flex gap-3 text-sm text-off-white/75">
+                    <span className="mt-2 h-px w-3 flex-shrink-0 bg-accent" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {track.href && (
+                <Link
+                  to={track.href}
+                  className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-accent transition-colors hover:text-off-white"
                 >
-                  {service.link.label}
-                  <ArrowRight className="h-3 w-3" />
-                </a>
+                  {track.cta}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               )}
             </motion.div>
           ))}
         </div>
 
-        {/* Who we help */}
+        {/* Capability index */}
         <div className="mt-24">
-          <motion.h3
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-8 font-display text-2xl font-bold text-off-white"
+            className="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-b border-off-white/15 pb-5"
           >
-            Who we help
-          </motion.h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {audiences.map((a, index) => (
+            <h3 className="font-display text-2xl font-bold text-off-white">
+              Equipment and platforms
+            </h3>
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/40">
+              Hands-on, in production environments
+            </p>
+          </motion.div>
+
+          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {stack.map((column, index) => (
               <motion.div
-                key={a.title}
-                initial={{ opacity: 0, y: 20 }}
+                key={column.group}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start gap-5 border-l-2 border-accent bg-navy-mid/20 p-6"
+                transition={{ duration: 0.4, delay: index * 0.04 }}
               >
-                <div className="rounded-sm bg-accent/15 p-3 text-accent flex-shrink-0">
-                  <a.icon className="h-6 w-6" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h4 className="mb-1 font-display font-bold text-off-white">{a.title}</h4>
-                  <p className="text-sm text-off-white/60">{a.description}</p>
-                </div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                  {column.group}
+                </p>
+                <ul className="mt-3 space-y-1.5">
+                  {column.items.map((item) => (
+                    <li key={item} className="text-sm text-off-white/70">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

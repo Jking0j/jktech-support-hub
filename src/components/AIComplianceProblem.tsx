@@ -24,7 +24,7 @@ const AIComplianceProblem = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 max-w-2xl"
         >
-          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
             Where The Risk Actually Sits
           </span>
           <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">
@@ -46,7 +46,7 @@ const AIComplianceProblem = () => {
             transition={{ duration: 0.5 }}
             className="rounded-sm border-l-4 border-border bg-card p-6 shadow-card"
           >
-            <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <h4 className="mb-5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
               Commonly Assumed Risky
             </h4>
             <ul className="space-y-3">
@@ -70,7 +70,7 @@ const AIComplianceProblem = () => {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="rounded-sm border-l-4 border-accent bg-navy-deep p-6 shadow-elevated"
           >
-            <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-accent">
+            <h4 className="mb-5 font-mono text-[10px] uppercase tracking-[0.15em] text-accent">
               What's Actually In Scope
             </h4>
             <ul className="space-y-3">

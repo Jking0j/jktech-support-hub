@@ -55,7 +55,7 @@ const AIComplianceContact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            <span className="mb-4 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent">
               Free Scoping Call
             </span>
             <h2 className="font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
@@ -94,7 +94,7 @@ const AIComplianceContact = () => {
               <div>
                 <label
                   htmlFor="ac-name"
-                  className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                  className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                 >
                   Full Name
                 </label>
@@ -111,7 +111,7 @@ const AIComplianceContact = () => {
                 <div>
                   <label
                     htmlFor="ac-email"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                    className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                   >
                     Email
                   </label>
@@ -126,7 +126,7 @@ const AIComplianceContact = () => {
                 <div>
                   <label
                     htmlFor="ac-phone"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                    className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                   >
                     Phone (optional)
                   </label>
@@ -142,7 +142,7 @@ const AIComplianceContact = () => {
               <div>
                 <label
                   htmlFor="ac-practice-size"
-                  className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                  className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                 >
                   Practice Size
                 </label>
@@ -163,7 +163,7 @@ const AIComplianceContact = () => {
               <div>
                 <label
                   htmlFor="ac-message"
-                  className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                  className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                 >
                   What AI tools are you currently using, if any?
                 </label>

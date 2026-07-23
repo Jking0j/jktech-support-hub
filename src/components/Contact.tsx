@@ -7,18 +7,18 @@ import { supabase } from "@/integrations/supabase/client";
 const steps = [
   {
     n: "01",
-    title: "Quick call",
-    desc: "A 15-minute call to understand your setup and pain points.",
+    title: "A short call",
+    desc: "Fifteen minutes to understand your setup, your team size, and what's actually causing problems.",
   },
   {
     n: "02",
-    title: "On-site audit",
-    desc: "We visit your Perth office for a physical and digital check.",
+    title: "On-site review",
+    desc: "We come to you and go through the network, hardware, backups and access controls properly.",
   },
   {
     n: "03",
-    title: "Action report",
-    desc: "You get a clear, honest list of what's good and what's a risk.",
+    title: "Written findings",
+    desc: "A plain-English list of what's sound, what's a risk, and what it would cost to address.",
   },
 ];
 
@@ -68,38 +68,40 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Free IT Health Check
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              Getting started
             </span>
-            <h2 className="font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
-              Ready for an IT partner you can trust?
+            <h2 className="mt-4 font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
+              Start with a review.
             </h2>
-            <p className="mt-6 text-lg text-off-white/70">
-              We'll spend 60 minutes auditing your systems and show you exactly where
-              the risks are. No obligation. No sales pitch.
+            <p className="mt-6 text-lg leading-relaxed text-off-white/70">
+              An hour on site, going through your systems, ending in a written summary
+              of what we found. There's no charge for it and no obligation afterwards.
             </p>
 
-            <div className="mt-12 space-y-8">
+            <div className="mt-12 border-t border-off-white/10">
               {steps.map((step) => (
-                <div key={step.n} className="flex gap-6">
-                  <span className="font-display text-3xl font-bold text-accent/40">
-                    {step.n}
-                  </span>
+                <div key={step.n} className="flex gap-6 border-b border-off-white/10 py-6">
+                  <span className="font-mono text-sm text-accent">{step.n}</span>
                   <div>
-                    <h4 className="font-display text-lg font-bold text-off-white">
+                    <h4 className="font-display text-base font-bold text-off-white">
                       {step.title}
                     </h4>
-                    <p className="mt-1 text-sm text-off-white/60">{step.desc}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-off-white/60">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 border-t border-off-white/10 pt-6">
-              <p className="text-xs uppercase tracking-widest text-off-white/50">Contact</p>
+            <div className="mt-10">
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/40">
+                Contact
+              </p>
               <a
                 href="mailto:support@jktechsolutions.com.au"
-                className="mt-2 inline-block font-display text-lg text-off-white hover:text-accent transition-colors"
+                className="mt-2 inline-block font-display text-lg text-off-white transition-colors hover:text-accent"
               >
                 support@jktechsolutions.com.au
               </a>
@@ -115,16 +117,14 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-sm bg-card p-10 text-navy-deep shadow-elevated"
           >
-            <h3 className="mb-8 font-display text-xl font-bold">
-              Request your free health check
-            </h3>
+            <h3 className="mb-8 font-display text-xl font-bold">Send an enquiry</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                  className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                 >
-                  Full Name
+                  Full name
                 </label>
                 <input
                   id="name"
@@ -139,7 +139,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                    className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                   >
                     Email
                   </label>
@@ -154,7 +154,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                    className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                   >
                     Phone (optional)
                   </label>
@@ -170,9 +170,9 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-navy-deep"
+                  className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-navy-deep"
                 >
-                  What's your biggest IT headache right now?
+                  What are you trying to sort out?
                 </label>
                 <textarea
                   id="message"
@@ -188,11 +188,11 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-navy-deep px-6 py-4 text-sm font-bold uppercase tracking-wider text-off-white transition-colors hover:bg-navy-mid disabled:opacity-60"
               >
-                {isSubmitting ? "Sending…" : "Submit Request"}
+                {isSubmitting ? "Sending…" : "Send enquiry"}
                 {!isSubmitting && <Send className="h-4 w-4" />}
               </button>
               <p className="text-center text-xs text-muted-foreground">
-                No obligation. No sales pitch. Just honest advice.
+                Replies usually come back within one business day.
               </p>
             </form>
           </motion.div>

@@ -1,94 +1,69 @@
 import { motion } from "framer-motion";
-import { X, Check, GraduationCap } from "lucide-react";
 
-const badItems = [
-  "Offshore call centres",
-  "12-month lock-in contracts",
-  "Days waiting for a response",
-  "Jargon and upselling",
-];
-
-const goodItems = [
-  "Local Perth-based support",
-  "Month-to-month, cancel anytime",
-  "Under 60 minute response",
-  "Plain English, honest advice",
+const facts = [
+  {
+    label: "Who does the work",
+    body: "A degree-qualified network engineer. You deal with the person doing the work, not an account manager relaying messages.",
+  },
+  {
+    label: "Where we operate",
+    body: "Perth and the surrounding metro area, on site where the work needs hands on it, remote where it doesn't.",
+  },
+  {
+    label: "How engagements are structured",
+    body: "Month-to-month for ongoing support, fixed-scope quotes for projects and audits. No minimum term.",
+  },
+  {
+    label: "How we quote",
+    body: "Scope and price agreed in writing before work starts. If something changes mid-project, you hear about it before the invoice does.",
+  },
 ];
 
 const About = () => {
   return (
     <section id="about" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-16 lg:grid-cols-2">
+        <div className="grid gap-16 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:col-span-5"
           >
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Why We're Different
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+              How this works
             </span>
-            <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">
-              We're not like other IT companies.
+            <h2 className="mt-4 font-display text-3xl font-bold text-navy-deep md:text-4xl">
+              Small enough to be direct.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-navy-mid">
-              Run by a degree-qualified network engineer who got tired of seeing Perth
-              businesses overcharged and underserved by big IT firms. Direct, local,
-              accountable.
+              Most IT problems in a small business aren't complicated — they're just
+              nobody's job. The work here is straightforward: understand the setup,
+              fix what's broken, and document what was done.
             </p>
-
-            <div className="mt-10 flex items-center gap-4 border-t border-border pt-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-navy-deep text-off-white">
-                <GraduationCap className="h-6 w-6" strokeWidth={1.5} />
-              </div>
-              <div>
-                <p className="font-bold text-navy-deep">Degree-Qualified Engineer</p>
-                <p className="text-sm text-accent">Network security & infrastructure</p>
-              </div>
-            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-sm border-l-4 border-destructive bg-card p-6 shadow-card"
-            >
-              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-destructive">
-                The "Standard" Firm
-              </h4>
-              <ul className="space-y-3">
-                {badItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-navy-mid/80">
-                    <X className="mt-0.5 h-4 w-4 flex-shrink-0 text-destructive" strokeWidth={2} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-sm border-l-4 border-accent bg-navy-deep p-6 shadow-elevated"
-            >
-              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-accent">
-                The JKTech Way
-              </h4>
-              <ul className="space-y-3">
-                {goodItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-off-white/85">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" strokeWidth={2} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          <div className="lg:col-span-7">
+            <dl className="border-t border-border">
+              {facts.map((fact, index) => (
+                <motion.div
+                  key={fact.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  className="grid gap-2 border-b border-border py-6 sm:grid-cols-3 sm:gap-8"
+                >
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent">
+                    {fact.label}
+                  </dt>
+                  <dd className="text-sm leading-relaxed text-navy-mid sm:col-span-2">
+                    {fact.body}
+                  </dd>
+                </motion.div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>
