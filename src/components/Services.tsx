@@ -1,76 +1,46 @@
 import { motion } from "framer-motion";
-import { 
-  Shield, 
-  Zap, 
+import {
+  Shield,
+  Zap,
   Server,
   Wrench,
-  GraduationCap,
   Building2,
   Home,
-  BrainCircuit
+  GraduationCap,
+  BrainCircuit,
 } from "lucide-react";
 
 const services = [
   {
     icon: Shield,
     title: "Network Security",
-    problem: "Worried about hackers, data breaches, or unsecured WiFi?",
-    description: "Protect your network from threats with proper firewall configuration, secure WiFi setup, and vulnerability assessments. Built by a degree-qualified network engineer.",
-    outcomes: [
-      "Firewall setup and hardening",
-      "Secure WiFi with proper encryption",
-      "Network vulnerability assessments",
-      "Guest network isolation",
-    ],
+    description:
+      "Firewall hardening, secure WiFi, and vulnerability assessments — built by a degree-qualified network engineer.",
     badge: "Degree Qualified",
   },
   {
     icon: Zap,
     title: "Network Optimisation",
-    problem: "Slow speeds, dropouts, or buffering ruining your productivity?",
-    description: "Get the performance your network should be delivering. We diagnose bottlenecks and optimise your setup for maximum speed and reliability.",
-    outcomes: [
-      "Speed and latency optimisation",
-      "WiFi coverage improvements",
-      "Bandwidth management",
-      "Dead spot elimination",
-    ],
+    description:
+      "Diagnose bottlenecks and get the performance your network should already be delivering.",
   },
   {
     icon: Server,
     title: "Infrastructure Upgrades",
-    problem: "Outdated equipment or network not built for growth?",
-    description: "Future-proof your network with properly planned infrastructure upgrades. We design and implement solutions that scale with your needs.",
-    outcomes: [
-      "Network design and planning",
-      "Router and switch upgrades",
-      "Cabling and access point installation",
-      "Seamless migration with zero downtime",
-    ],
+    description:
+      "Design and implement scalable network infrastructure that grows with your business.",
   },
   {
     icon: Wrench,
     title: "Maintenance & Support",
-    problem: "Tired of network issues disrupting your day?",
-    description: "Keep your network running smoothly with proactive maintenance and responsive support. We monitor, update, and fix issues before they become problems.",
-    outcomes: [
-      "Proactive network monitoring",
-      "Regular firmware and security updates",
-      "Fast response to issues",
-      "Ongoing performance optimisation",
-    ],
+    description:
+      "Proactive monitoring, updates, and rapid response so issues never become downtime.",
   },
   {
     icon: BrainCircuit,
     title: "AI Solutions & Integrations",
-    problem: "Want to leverage AI but don't know where to start?",
-    description: "Unlock the power of artificial intelligence for your business. We help you identify, implement, and integrate AI tools that streamline operations and boost productivity.",
-    outcomes: [
-      "AI tool selection and setup",
-      "Workflow automation with AI",
-      "Custom AI integrations",
-      "Staff training on AI tools",
-    ],
+    description:
+      "Identify, implement, and integrate AI tools that streamline operations and boost productivity.",
   },
 ];
 
@@ -78,116 +48,99 @@ const audiences = [
   {
     icon: Building2,
     title: "Small & Medium Businesses",
-    description: "5-50 staff needing reliable, secure networks that don't break the bank",
+    description: "5–50 staff needing reliable, secure networks that don't break the bank.",
   },
   {
     icon: Home,
     title: "Home Networks",
-    description: "Work-from-home setups, smart homes, and households wanting better WiFi",
+    description: "Work-from-home setups, smart homes, and households wanting better WiFi.",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="services" className="bg-navy-deep py-24 text-off-white">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-16 max-w-2xl"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            Network Specialist
+          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Services
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            5 Ways We Fix Your <span className="text-gradient">Network Problems</span>
+          <h2 className="font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
+            Five ways we fix your network.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Degree-qualified network engineer specialising in security, optimisation, 
-            and infrastructure upgrades for SMEs and home networks in Perth.
+          <p className="mt-5 text-lg text-off-white/60">
+            Specialised network solutions for Perth SMEs and home networks.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-gradient-card rounded-xl p-8 border border-border shadow-card hover:shadow-elevated hover:border-primary/30 transition-all duration-300"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group flex flex-col border border-off-white/10 bg-navy-mid/20 p-8 transition-colors hover:bg-navy-mid/40"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-7 h-7 text-primary" />
+              <div className="mb-6 flex items-start justify-between">
+                <div className="rounded-sm bg-accent/15 p-3 text-accent">
+                  <service.icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
                 {service.badge && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
-                    <GraduationCap className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1 rounded-full border border-accent px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
+                    <GraduationCap className="h-3 w-3" />
                     {service.badge}
                   </span>
                 )}
               </div>
-              
-              <p className="text-sm text-primary font-medium mb-2 italic">
-                {service.problem}
-              </p>
-              
-              <h3 className="font-display text-xl font-bold mb-3 text-foreground">
+              <h3 className="mb-3 font-display text-xl font-bold text-off-white">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-5 text-sm">
+              <p className="text-sm leading-relaxed text-off-white/60">
                 {service.description}
               </p>
-              
-              <div className="space-y-2.5 pt-4 border-t border-border/50">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium">What you get:</p>
-                {service.outcomes.map((outcome, outcomeIndex) => (
-                  <div key={outcomeIndex} className="text-sm text-foreground flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    {outcome}
-                  </div>
-                ))}
-              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Who We Help */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <h3 className="font-display text-2xl font-bold mb-2">Who We Help</h3>
-          <p className="text-muted-foreground">Expert network solutions for businesses and homes</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {audiences.map((audience, index) => (
-            <motion.div
-              key={audience.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex items-start gap-4 bg-gradient-card rounded-xl p-6 border border-border"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <audience.icon className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-display font-bold text-foreground mb-1">{audience.title}</h4>
-                <p className="text-sm text-muted-foreground">{audience.description}</p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Who we help */}
+        <div className="mt-24">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 font-display text-2xl font-bold text-off-white"
+          >
+            Who we help
+          </motion.h3>
+          <div className="grid gap-6 md:grid-cols-2">
+            {audiences.map((a, index) => (
+              <motion.div
+                key={a.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex items-start gap-5 border-l-2 border-accent bg-navy-mid/20 p-6"
+              >
+                <div className="rounded-sm bg-accent/15 p-3 text-accent flex-shrink-0">
+                  <a.icon className="h-6 w-6" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h4 className="mb-1 font-display font-bold text-off-white">{a.title}</h4>
+                  <p className="text-sm text-off-white/60">{a.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

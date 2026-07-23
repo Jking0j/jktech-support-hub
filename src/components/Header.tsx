@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,90 +11,88 @@ const Header = () => {
     { label: "Contact", href: "#contact" },
   ];
 
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto px-4">
-        {/* Top bar */}
-        <div className="hidden md:flex items-center justify-end gap-6 py-2 text-sm text-muted-foreground border-b border-border/50">
-          <a href="mailto:support@jktechsolutions.com.au" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Mail className="w-4 h-4" />
-            <span>support@jktechsolutions.com.au</span>
-          </a>
-        </div>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#" className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-navy-deep">
+            <span className="font-display text-sm font-bold text-off-white">JK</span>
+          </div>
+          <span className="font-display text-lg font-bold tracking-tight text-navy-deep">
+            JKTechSolutions
+          </span>
+        </a>
 
-        {/* Main nav */}
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-lg">JK</span>
-            </div>
-            <span className="font-display font-bold text-xl">
-              <span className="text-gradient">JKTech</span>
-              <span className="text-foreground">Solutions</span>
-            </span>
-          </a>
-
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
-            <Button 
-              variant="hero" 
-              size="default"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+        <nav className="hidden items-center gap-8 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-sm font-medium text-navy-mid transition-colors hover:text-accent"
             >
-              Get Support
-            </Button>
-          </nav>
-
-          {/* Mobile menu toggle */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+              {item.label}
+            </a>
+          ))}
+          <div className="h-4 w-px bg-border" />
+          <a
+            href="mailto:support@jktechsolutions.com.au"
+            className="text-xs font-medium uppercase tracking-wider text-accent hover:text-navy-deep transition-colors"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            support@jktechsolutions.com.au
+          </a>
+          <button
+            onClick={scrollToContact}
+            className="rounded-sm bg-navy-deep px-5 py-2.5 text-sm font-semibold text-off-white transition-colors hover:bg-navy-mid"
+          >
+            Get Support
           </button>
-        </div>
+        </nav>
+
+        <button
+          className="md:hidden p-2 text-navy-deep"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="md:hidden border-t border-border bg-background"
           >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                  className="text-navy-mid hover:text-accent transition-colors font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full"
-                onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+              <a
+                href="mailto:support@jktechsolutions.com.au"
+                className="text-sm text-accent"
+              >
+                support@jktechsolutions.com.au
+              </a>
+              <button
+                onClick={scrollToContact}
+                className="rounded-sm bg-navy-deep px-5 py-3 text-sm font-semibold text-off-white"
               >
                 Get Support
-              </Button>
+              </button>
             </nav>
           </motion.div>
         )}
