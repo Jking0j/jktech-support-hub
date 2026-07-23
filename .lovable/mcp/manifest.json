@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://jlfacscbwgytbrjujtcl.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "jktechsolutions-mcp",
+      "version": "0.1.0",
+      "title": "JKTechSolutions MCP"
+    },
+    "tools": [
+      {
+        "name": "list_contact_enquiries",
+        "title": "List contact enquiries",
+        "description": "List recent contact form submissions from the JKTechSolutions website. Returns name, email, phone, message, and submission time.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "default": 20,
+              "description": "Maximum number of enquiries to return (1-100).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
