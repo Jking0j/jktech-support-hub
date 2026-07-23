@@ -1,97 +1,88 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Quote } from "lucide-react";
 
-const testimonials = [
-  {
-    name: "Practice Manager",
-    role: "Roleystone Family Medical Centre",
-    content: "They took over our entire IT setup and the difference is night and day. Our staff used to complain about IT weekly—now they don't even think about it. System outages are basically zero.",
-    outcome: "Zero IT complaints from staff",
-    rating: 5,
-  },
+const featured = {
+  name: "Practice Manager",
+  role: "Roleystone Family Medical Centre",
+  content:
+    "They took over our entire IT setup and the difference is night and day. Our staff used to complain about IT weekly — now they don't even think about it. System outages are basically zero.",
+};
+
+const others = [
   {
     name: "Steve Williams",
     role: "Home Office, Armadale",
-    content: "Had WiFi dead spots killing my video calls for months. They came out, fixed it properly, and now I have perfect coverage everywhere. Should have called them sooner.",
-    outcome: "Perfect WiFi coverage throughout",
-    rating: 5,
+    content: "Fixed my WiFi dead spots and now video calls just work. Should have called sooner.",
   },
   {
     name: "Marcus Chen",
     role: "Remote Worker, Kelmscott",
-    content: "Set up my home office so video calls actually work. Quick response, explained everything in plain English, and didn't try to sell me stuff I didn't need.",
-    outcome: "Reliable video calls, finally",
-    rating: 5,
+    content: "Set up my home office properly. Plain English, no unnecessary upsells.",
   },
   {
     name: "Lisa Thompson",
     role: "Small Business, Gosnells",
-    content: "Our network went down on a Friday afternoon—nightmare scenario. They had us back online within the hour. That kind of response time is exactly what small businesses need.",
-    outcome: "Back online within 60 minutes",
-    rating: 5,
+    content: "Network down Friday afternoon — back online in under an hour. That's the response we needed.",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="testimonials" className="bg-muted/50 py-24">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-14 max-w-2xl"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Real Results From <span className="text-gradient">Real Clients</span>
+          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Trusted Locally
+          </span>
+          <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">
+            Real results from Perth clients.
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Perth businesses and households who stopped struggling with IT.
-          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-card">
-                <CardContent className="p-6">
-                  <Quote className="w-8 h-8 text-primary/40 mb-4" />
-                  
-                  <p className="text-foreground/90 mb-4 leading-relaxed">
-                    "{testimonial.content}"
-                  </p>
-                  
-                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
-                    Result: {testimonial.outcome}
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                    
-                    <div className="flex gap-0.5">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="grid gap-6 lg:grid-cols-5">
+          {/* Featured */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="rounded-sm border border-border bg-card p-10 shadow-card lg:col-span-3"
+          >
+            <Quote className="mb-6 h-10 w-10 text-accent/40" strokeWidth={1.5} />
+            <p className="font-display text-xl italic leading-relaxed text-navy-deep md:text-2xl">
+              "{featured.content}"
+            </p>
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="font-bold text-navy-deep">{featured.name}</p>
+              <p className="text-sm text-accent">{featured.role}</p>
+            </div>
+          </motion.div>
+
+          {/* Others stacked */}
+          <div className="grid gap-6 lg:col-span-2">
+            {others.map((t, index) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="rounded-sm border border-border bg-card p-6 shadow-card"
+              >
+                <p className="text-sm leading-relaxed text-navy-mid">"{t.content}"</p>
+                <div className="mt-4 border-t border-border pt-3">
+                  <p className="text-sm font-bold text-navy-deep">{t.name}</p>
+                  <p className="text-xs text-accent">{t.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
