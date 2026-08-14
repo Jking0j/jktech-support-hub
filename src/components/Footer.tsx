@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t-2 border-navy-accent/40 bg-navy-deep text-off-white/60">
+    <footer className="border-t-2 border-navy-accent/40 bg-navy-deep text-off-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white/90">
+            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white">
               Services
             </h4>
             <ul className="space-y-3 text-sm">
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white/90">
+            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white">
               Company
             </h4>
             <ul className="space-y-3 text-sm">
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white/90">
+            <h4 className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-off-white">
               Contact
             </h4>
             <ul className="space-y-3 text-sm">
