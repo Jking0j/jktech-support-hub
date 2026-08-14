@@ -70,10 +70,10 @@ const AIComplianceContact = () => {
             <div className="mt-12 border-t border-off-white/10 pt-6">
               <p className="text-xs uppercase tracking-widest text-off-white/50">Contact</p>
               <a
-                href="mailto:support@jktechsolutions.com.au"
+                href="mailto:contact@jktechsolutions.com.au"
                 className="mt-2 inline-block font-display text-lg text-off-white hover:text-accent transition-colors"
               >
-                support@jktechsolutions.com.au
+                contact@jktechsolutions.com.au
               </a>
               <p className="mt-1 text-sm text-off-white/60">Perth, Western Australia</p>
             </div>

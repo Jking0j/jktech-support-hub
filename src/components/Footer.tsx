@@ -50,10 +50,10 @@ const Footer = () => {
               Contact
             </h4>
             <a
-              href="mailto:support@jktechsolutions.com.au"
+              href="mailto:contact@jktechsolutions.com.au"
               className="block text-sm font-medium text-off-white transition-colors hover:text-accent"
             >
-              support@jktechsolutions.com.au
+              contact@jktechsolutions.com.au
             </a>
             <p className="mt-2 text-sm">Perth, Western Australia</p>
           </div>

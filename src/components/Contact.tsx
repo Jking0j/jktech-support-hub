@@ -100,10 +100,10 @@ const Contact = () => {
                 Contact
               </p>
               <a
-                href="mailto:support@jktechsolutions.com.au"
+                href="mailto:contact@jktechsolutions.com.au"
                 className="mt-2 inline-block font-display text-lg text-off-white transition-colors hover:text-accent"
               >
-                support@jktechsolutions.com.au
+                contact@jktechsolutions.com.au
               </a>
               <p className="mt-1 text-sm text-off-white/60">Perth, Western Australia</p>
             </div>

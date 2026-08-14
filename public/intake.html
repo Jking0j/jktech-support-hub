@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Project Intake Form, JKTECH Solutions</title>
+<style>
+  :root{
+    --navy:#0f2540;
+    --navy-dark:#0a1a2e;
+    --teal:#1a9c8c;
+    --teal-dark:#137d70;
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --text:#1c2733;
+    --muted:#5b6b7a;
+    --border:#dde3e9;
+    --danger:#c0392b;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+  }
+  header{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff;
+    padding:36px 20px 44px;
+    text-align:center;
+  }
+  header a.brand{
+    color:#fff;
+    text-decoration:none;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+  header a.brand:hover{ text-decoration:underline; }
+  header p.tagline{
+    margin:8px 0 0;
+    color:#b9c8d6;
+    font-size:.95rem;
+  }
+  .wrap{
+    max-width:760px;
+    margin:-24px auto 60px;
+    padding:0 16px;
+  }
+  .intro-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:0 4px 18px rgba(15,37,64,.08);
+    padding:24px 28px;
+    margin-bottom:24px;
+  }
+  .intro-card h1{
+    font-size:1.3rem;
+    margin:0 0 8px;
+    color:var(--navy);
+  }
+  .intro-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:.95rem;
+  }
+  form{ display:flex; flex-direction:column; gap:20px; }
+  fieldset{
+    background:var(--card);
+    border:none;
+    border-radius:var(--radius);
+    box-shadow:0 2px 10px rgba(15,37,64,.06);
+    padding:22px 26px 26px;
+    margin:0;
+  }
+  legend{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--navy);
+    padding:0 4px;
+  }
+  legend .num{
+    background:var(--teal);
+    color:#fff;
+    width:26px;height:26px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.85rem;
+    flex:none;
+  }
+  .field{ margin-top:16px; }
+  .field:first-of-type{ margin-top:18px; }
+  label{
+    display:block;
+    font-weight:600;
+    font-size:.9rem;
+    margin-bottom:5px;
+    color:var(--text);
+  }
+  label .opt{
+    font-weight:400;
+    color:var(--muted);
+    font-size:.82rem;
+  }
+  .hint{
+    font-size:.8rem;
+    color:var(--muted);
+    margin:2px 0 6px;
+  }
+  input[type=text], input[type=email], input[type=tel], input[type=url], input[type=date], select, textarea{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:.95rem;
+    font-family:inherit;
+    background:#fbfcfd;
+    color:var(--text);
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(26,156,140,.15);
+    background:#fff;
+  }
+  textarea{ min-height:80px; resize:vertical; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:600px){ .grid2{ grid-template-columns:1fr; } }
+  .choice-group{ display:flex; flex-direction:column; gap:8px; }
+  .choice-group.row{ flex-direction:row; flex-wrap:wrap; gap:10px; }
+  .choice{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    padding:9px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    cursor:pointer;
+    font-size:.9rem;
+    background:#fbfcfd;
+    transition:border-color .15s, background .15s;
+  }
+  .choice:hover{ border-color:var(--teal); }
+  .choice input{ margin-top:2px; accent-color:var(--teal); flex:none; }
+  .choice-group.row .choice{ flex:1 1 auto; min-width:150px; }
+  .subfield{
+    margin-top:10px;
+    padding:12px 14px;
+    background:#eef6f4;
+    border:1px solid #cfe7e2;
+    border-radius:8px;
+    display:none;
+  }
+  .subfield.show{ display:block; }
+  .required-mark{ color:var(--danger); }
+  .upload-box{
+    border:2px dashed var(--border);
+    border-radius:10px;
+    padding:22px;
+    text-align:center;
+    background:#fbfcfd;
+    cursor:pointer;
+    transition:border-color .15s;
+  }
+  .upload-box:hover, .upload-box.dragover{ border-color:var(--teal); background:#f2faf9; }
+  .upload-box p{ margin:6px 0 0; font-size:.85rem; color:var(--muted); }
+  .upload-box strong{ color:var(--teal-dark); }
+  .previews{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+  .preview-item{
+    position:relative;
+    width:84px;height:84px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:#fff;
+  }
+  .preview-item img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .preview-item .fname{
+    position:absolute; bottom:0; left:0; right:0;
+    background:rgba(15,37,64,.75); color:#fff;
+    font-size:.55rem; padding:2px 4px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .submit-row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:8px 4px 4px;
+  }
+  button[type=submit]{
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    padding:14px 40px;
+    border-radius:30px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(26,156,140,.35);
+    transition:background .15s, transform .1s;
+  }
+  button[type=submit]:hover{ background:var(--teal-dark); }
+  button[type=submit]:active{ transform:scale(.98); }
+  button[type=submit]:disabled{ opacity:.6; cursor:not-allowed; }
+  .fine-print{ font-size:.78rem; color:var(--muted); text-align:center; max-width:420px; }
+  #formMsg{
+    max-width:760px; margin:0 auto 20px; padding:0 16px;
+  }
+  .msg-box{
+    border-radius:8px; padding:14px 18px; font-size:.9rem; display:none; margin-bottom:10px;
+  }
+  .msg-box.success{ display:block; background:#e6f6f2; border:1px solid #b6e3d6; color:#0d5c47; }
+  .msg-box.error{ display:block; background:#fdecea; border:1px solid #f3c1bb; color:var(--danger); }
+  footer{ text-align:center; color:var(--muted); font-size:.8rem; padding:10px 0 40px; }
+  .top-banner{
+    background:var(--teal-dark);
+    color:#fff;
+    text-align:center;
+    font-size:.85rem;
+    padding:10px 16px;
+  }
+  .top-banner .required-mark{ color:#ffe1de; font-weight:700; }
+</style>
+</head>
+<body>
+
+<div class="top-banner">Fill this out with as much detail as you can, the more we know upfront, the fewer back-and-forth emails we'll need. You can save your progress by leaving the tab open; fields marked <span class="required-mark">*</span> are required.</div>
+
+<header>
+  <a class="brand" href="https://jktechsolutions.com.au" target="_blank" rel="noopener">JKTECH Solutions</a>
+  <p class="tagline">Website Project Intake Form</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro-card">
+    <h1>Let's build your new website</h1>
+    <p>Fill this out with as much detail as you can, the more we know upfront, the fewer back-and-forth emails we'll need. You can save your progress by leaving the tab open; fields marked <span class="required-mark">*</span> are required.</p>
+  </div>
+
+  <div id="formMsg">
+    <div id="successMsg" class="msg-box">Thanks! Your project details have been submitted. We'll be in touch shortly.</div>
+    <div id="errorMsg" class="msg-box">Something went wrong sending your form. Please try again, or email us directly.</div>
+  </div>
+
+  <!--
+    ACTION REQUIRED BEFORE GOING LIVE:
+    1. Create a free account at https://formspree.io
+    2. Create a new form there and copy its endpoint (looks like https://formspree.io/f/abcd1234)
+    3. Replace YOUR_FORM_ID in the line below with that ID.
+    Until you do this, submissions will fail.
+  -->
+  <form id="intakeForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+
+    <!-- 1. CONTACT -->
+    <fieldset>
+      <legend><span class="num">1</span> Your Contact Details</legend>
+
+      <div class="field grid2">
+        <div>
+          <label for="fullName">Full name <span class="required-mark">*</span></label>
+          <input type="text" id="fullName" name="Full Name" required>
+        </div>
+        <div>
+          <label for="bizName">Business / organisation name</label>
+          <input type="text" id="bizName" name="Business Name">
+        </div>
+      </div>
+
+      <div class="field grid2">
+        <div>
+          <label for="email">Email address <span class="required-mark">*</span></label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div>
+          <label for="phone">Phone number (with country code) <span class="required-mark">*</span></label>
+          <input type="tel" id="phone" name="Phone" placeholder="e.g. +61 4XX XXX XXX / +1 555 123 4567" required>
+        </div>
+      </div>
+
+      <div class="field grid2">
+        <div>
+          <label for="country">Country <span class="required-mark">*</span></label>
+          <input type="text" id="country" name="Country" placeholder="e.g. Australia, Nigeria, United States" required>
+        </div>
+        <div>
+          <label for="timezone">Your time zone <span class="opt">(for scheduling calls)</span></label>
+          <input type="text" id="timezone" name="Time Zone" placeholder="e.g. AEST (UTC+8), EST (UTC-5)">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Preferred contact method</label>
+        <div class="choice-group row">
+          <label class="choice"><input type="radio" name="Preferred Contact" value="Email" checked> Email</label>
+          <label class="choice"><input type="radio" name="Preferred Contact" value="Phone/Call"> Phone call</label>
+          <label class="choice"><input type="radio" name="Preferred Contact" value="Text/SMS"> Text / SMS</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 2. ABOUT THE BUSINESS -->
+    <fieldset>
+      <legend><span class="num">2</span> About Your Business</legend>
+
+      <div class="field">
+        <label for="industry">Industry / type of business <span class="required-mark">*</span></label>
+        <input type="text" id="industry" name="Industry" placeholder="e.g. café, real estate, plumbing, online store" required>
+      </div>
+
+      <div class="field">
+        <label for="bizDesc">Briefly describe your business and what the website is for <span class="required-mark">*</span></label>
+        <textarea id="bizDesc" name="Business Description" required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="audience">Who is your target audience?</label>
+        <textarea id="audience" name="Target Audience" placeholder="Who are your typical customers/visitors?"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Main goal(s) for the website <span class="opt">(select all that apply)</span></label>
+        <div class="choice-group row">
+          <label class="choice"><input type="checkbox" name="Goals" value="Sell products online"> Sell products online</label>
+          <label class="choice"><input type="checkbox" name="Goals" value="Generate leads/enquiries"> Generate leads / enquiries</label>
+          <label class="choice"><input type="checkbox" name="Goals" value="Showcase portfolio"> Showcase portfolio</label>
+          <label class="choice"><input type="checkbox" name="Goals" value="Provide business info"> Provide business info</label>
+          <label class="choice"><input type="checkbox" name="Goals" value="Take bookings/appointments"> Take bookings / appointments</label>
+          <label class="choice"><input type="checkbox" name="Goals" value="Build brand awareness"> Build brand awareness</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 3. DOMAIN NAME -->
+    <fieldset>
+      <legend><span class="num">3</span> Domain Name</legend>
+
+      <div class="field">
+        <label>Do you already own a domain name? <span class="required-mark">*</span></label>
+        <div class="choice-group row">
+          <label class="choice"><input type="radio" name="Has Domain" value="Yes, I already own one" required data-toggle="ownDomainBox"> Yes, I already own one</label>
+          <label class="choice"><input type="radio" name="Has Domain" value="No, I need a new one" data-toggle="newDomainBox"> No, I need a new one</label>
+          <label class="choice"><input type="radio" name="Has Domain" value="Not sure" data-toggle="none"> Not sure / need advice</label>
+        </div>
+      </div>
+
+      <div class="subfield" id="ownDomainBox">
+        <label for="existingDomain">What's your existing domain?</label>
+        <input type="text" id="existingDomain" name="Existing Domain" placeholder="e.g. mybusiness.com, mybusiness.com.au, mybusiness.co.uk">
+      </div>
+
+      <div class="subfield" id="newDomainBox">
+        <label for="domainChoices">What domain name(s) would you like? <span class="opt">(list 2–3 options in case your first choice is taken)</span></label>
+        <textarea id="domainChoices" name="Desired Domain Names" placeholder="1. mybusiness.com&#10;2. mybusiness.com.au / .co.uk / .ca / etc.&#10;3. ..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>Who should purchase/register the new domain? <span class="required-mark">*</span></label>
+        <div class="choice-group">
+          <label class="choice"><input type="radio" name="Domain Purchase" value="I'll purchase it myself and provide access" required> I'll purchase it myself and provide JKTECH access to it</label>
+          <label class="choice"><input type="radio" name="Domain Purchase" value="Please purchase it on my behalf (I will cover the cost)"> Please purchase it on my behalf, I'll cover the registration cost</label>
+          <label class="choice"><input type="radio" name="Domain Purchase" value="Not sure - please advise"> Not sure, please advise me on the best option</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 4. DESIGN & THEME -->
+    <fieldset>
+      <legend><span class="num">4</span> Design & Theme</legend>
+
+      <div class="field">
+        <label>Preferred style / theme <span class="opt">(select all that appeal to you)</span></label>
+        <div class="choice-group row">
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Modern & Minimal"> Modern & minimal</label>
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Bold & Colorful"> Bold & colourful</label>
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Corporate & Professional"> Corporate & professional</label>
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Playful & Fun"> Playful & fun</label>
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Elegant & Luxury"> Elegant & luxury</label>
+          <label class="choice"><input type="checkbox" name="Theme Style" value="Rustic/Natural"> Rustic / natural</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="brandColors">Preferred colours <span class="opt">(brand colours if you have them, otherwise general preferences)</span></label>
+        <input type="text" id="brandColors" name="Preferred Colors" placeholder="e.g. navy blue and gold, or 'earthy greens'">
+      </div>
+
+      <div class="field">
+        <label for="inspireLinks">Websites you like the look of <span class="opt">(paste 1–3 links for inspiration)</span></label>
+        <textarea id="inspireLinks" name="Inspiration Websites" placeholder="https://..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="avoidNotes">Anything you specifically want to avoid?</label>
+        <textarea id="avoidNotes" name="Design Dislikes"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Do you have an existing logo?</label>
+        <div class="choice-group row">
+          <label class="choice"><input type="radio" name="Has Logo" value="Yes, I'll upload it below"> Yes, I'll upload it below</label>
+          <label class="choice"><input type="radio" name="Has Logo" value="No, I need one designed"> No, I need one designed</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 5. PAGES & CONTENT -->
+    <fieldset>
+      <legend><span class="num">5</span> Pages & Content</legend>
+
+      <div class="field">
+        <label>Which pages do you need? <span class="opt">(select all that apply)</span></label>
+        <div class="choice-group row">
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Home"> Home</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="About"> About</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Services"> Services</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Products/Shop"> Products / shop</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Portfolio/Gallery"> Portfolio / gallery</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Blog"> Blog</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Contact"> Contact</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="FAQ"> FAQ</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Testimonials"> Testimonials</label>
+          <label class="choice"><input type="checkbox" name="Pages Needed" value="Team"> Team</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="otherPages">Other pages not listed above</label>
+        <input type="text" id="otherPages" name="Other Pages">
+      </div>
+
+      <div class="field">
+        <label>Do you already have written content (text) for the site?</label>
+        <div class="choice-group row">
+          <label class="choice"><input type="radio" name="Has Content" value="Yes, I'll provide it"> Yes, I'll provide it</label>
+          <label class="choice"><input type="radio" name="Has Content" value="Some of it - need help with the rest"> Some of it, need help with the rest</label>
+          <label class="choice"><input type="radio" name="Has Content" value="No, I need copywriting help"> No, I need copywriting help</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 6. IMAGES & MEDIA -->
+    <fieldset>
+      <legend><span class="num">6</span> Photos & Media</legend>
+
+      <div class="field">
+        <label>Upload photos for your website <span class="opt">(logo, product photos, team photos, etc.)</span></label>
+        <div class="upload-box" id="uploadBox">
+          <strong>Click to choose files</strong>
+          <p>or drag and drop images here, you can select multiple</p>
+          <input type="file" id="siteImages" name="Website Images" accept="image/*" multiple style="display:none;">
+        </div>
+        <div class="previews" id="previewArea"></div>
+      </div>
+
+      <div class="field">
+        <label>Do you need stock photos sourced for anything missing?</label>
+        <div class="choice-group row">
+          <label class="choice"><input type="radio" name="Needs Stock Photos" value="Yes"> Yes</label>
+          <label class="choice"><input type="radio" name="Needs Stock Photos" value="No"> No</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="videoLinks">Any videos to include? <span class="opt">(YouTube/Vimeo links, etc.)</span></label>
+        <input type="text" id="videoLinks" name="Video Links">
+      </div>
+    </fieldset>
+
+    <!-- 7. FEATURES -->
+    <fieldset>
+      <legend><span class="num">7</span> Features & Functionality</legend>
+
+      <div class="field">
+        <label>Which features do you need? <span class="opt">(select all that apply)</span></label>
+        <div class="choice-group row">
+          <label class="choice"><input type="checkbox" name="Features" value="Contact form"> Contact form</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Online store/e-commerce"> Online store / e-commerce</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Online booking/appointments"> Online booking / appointments</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Blog"> Blog</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Newsletter signup"> Newsletter signup</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Live chat"> Live chat</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Social media integration"> Social media integration</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Payment gateway"> Payment gateway</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Member/login area"> Member / login area</label>
+          <label class="choice"><input type="checkbox" name="Features" value="Multi-language support"> Multi-language support</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="otherFeatures">Other features not listed above</label>
+        <input type="text" id="otherFeatures" name="Other Features">
+      </div>
+
+      <div class="field grid2">
+        <div>
+          <label>Do you need website hosting set up?</label>
+          <div class="choice-group row">
+            <label class="choice"><input type="radio" name="Needs Hosting" value="Yes"> Yes</label>
+            <label class="choice"><input type="radio" name="Needs Hosting" value="No, I have it"> No, I have it</label>
+            <label class="choice"><input type="radio" name="Needs Hosting" value="Not sure"> Not sure</label>
+          </div>
+        </div>
+        <div>
+          <label>Do you need business email set up?</label>
+          <div class="choice-group row">
+            <label class="choice"><input type="radio" name="Needs Email" value="Yes"> Yes</label>
+            <label class="choice"><input type="radio" name="Needs Email" value="No, I have it"> No, I have it</label>
+            <label class="choice"><input type="radio" name="Needs Email" value="Not sure"> Not sure</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 8. SOCIAL LINKS -->
+    <fieldset>
+      <legend><span class="num">8</span> Social Media</legend>
+      <div class="field grid2">
+        <div>
+          <label for="fb">Facebook</label>
+          <input type="url" id="fb" name="Facebook" placeholder="https://facebook.com/...">
+        </div>
+        <div>
+          <label for="ig">Instagram</label>
+          <input type="url" id="ig" name="Instagram" placeholder="https://instagram.com/...">
+        </div>
+      </div>
+      <div class="field grid2">
+        <div>
+          <label for="li">LinkedIn</label>
+          <input type="url" id="li" name="LinkedIn" placeholder="https://linkedin.com/...">
+        </div>
+        <div>
+          <label for="tiktok">TikTok / Other</label>
+          <input type="url" id="tiktok" name="TikTok or Other" placeholder="https://...">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- 9. BUDGET & TIMELINE -->
+    <fieldset>
+      <legend><span class="num">9</span> Budget & Timeline</legend>
+
+      <div class="field grid2">
+        <div>
+          <label for="currency">Currency</label>
+          <select id="currency" name="Currency">
+            <option value="">Select currency…</option>
+            <option>AUD (A$)</option>
+            <option>USD ($)</option>
+            <option>GBP (£)</option>
+            <option>EUR (€)</option>
+            <option>CAD (C$)</option>
+            <option>NZD (NZ$)</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="budget">Estimated budget range <span class="opt">(in your selected currency)</span></label>
+          <select id="budget" name="Budget Range">
+            <option value="">Select a range…</option>
+            <option>Under 500</option>
+            <option>500 – 1,500</option>
+            <option>1,500 – 3,000</option>
+            <option>3,000 – 6,000</option>
+            <option>6,000+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="deadline">Desired launch date / deadline</label>
+        <input type="date" id="deadline" name="Desired Launch Date">
+      </div>
+
+      <div class="field">
+        <label for="notes">Anything else we should know? <span class="opt">(special requirements, references, questions)</span></label>
+        <textarea id="notes" name="Additional Notes"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="submit-row">
+      <button type="submit" id="submitBtn">Submit My Details</button>
+      <p class="fine-print">By submitting, you agree that JKTECH Solutions will use this information to plan and design your website. We'll follow up by your preferred contact method.</p>
+    </div>
+
+  </form>
+</div>
+
+<footer>JKTECH Solutions · Website Project Intake Form</footer>
+
+<script>
+  // ---- Toggle domain sub-fields based on radio selection ----
+  document.querySelectorAll('input[name="Has Domain"]').forEach(function(radio){
+    radio.addEventListener('change', function(){
+      document.getElementById('ownDomainBox').classList.remove('show');
+      document.getElementById('newDomainBox').classList.remove('show');
+      var target = this.getAttribute('data-toggle');
+      if(target && target !== 'none'){
+        document.getElementById(target).classList.add('show');
+      }
+    });
+  });
+
+  // ---- Image upload + preview ----
+  var uploadBox = document.getElementById('uploadBox');
+  var fileInput = document.getElementById('siteImages');
+  var previewArea = document.getElementById('previewArea');
+
+  uploadBox.addEventListener('click', function(){ fileInput.click(); });
+  uploadBox.addEventListener('dragover', function(e){ e.preventDefault(); uploadBox.classList.add('dragover'); });
+  uploadBox.addEventListener('dragleave', function(){ uploadBox.classList.remove('dragover'); });
+  uploadBox.addEventListener('drop', function(e){
+    e.preventDefault();
+    uploadBox.classList.remove('dragover');
+    fileInput.files = e.dataTransfer.files;
+    renderPreviews();
+  });
+  fileInput.addEventListener('change', renderPreviews);
+
+  function renderPreviews(){
+    previewArea.innerHTML = '';
+    var files = fileInput.files;
+    for(var i=0; i<files.length; i++){
+      (function(file){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          var item = document.createElement('div');
+          item.className = 'preview-item';
+          var img = document.createElement('img');
+          img.src = e.target.result;
+          var fname = document.createElement('div');
+          fname.className = 'fname';
+          fname.textContent = file.name;
+          item.appendChild(img);
+          item.appendChild(fname);
+          previewArea.appendChild(item);
+        };
+        reader.readAsDataURL(file);
+      })(files[i]);
+    }
+  }
+
+  // ---- Submit via fetch so we can show an inline success message ----
+  var form = document.getElementById('intakeForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var successMsg = document.getElementById('successMsg');
+  var errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    successMsg.classList.remove('success');
+    errorMsg.classList.remove('error');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if(response.ok){
+        successMsg.classList.add('success');
+        form.reset();
+        previewArea.innerHTML = '';
+        document.querySelectorAll('.subfield').forEach(function(el){ el.classList.remove('show'); });
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        errorMsg.classList.add('error');
+      }
+    }).catch(function(){
+      errorMsg.classList.add('error');
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit My Details';
+    });
+  });
+</script>
+
+</body>
+</html>
