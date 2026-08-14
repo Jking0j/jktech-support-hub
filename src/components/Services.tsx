@@ -31,6 +31,22 @@ const tracks = [
     href: "/ai-compliance",
     cta: "See the full scope",
   },
+  {
+    label: "03",
+    title: "Website design & builds",
+    audience: "New and growing businesses",
+    description:
+      "A custom-built website for your business, from a short brief through to a live, working site. No templates, no bloated page builders.",
+    points: [
+      "Custom design matched to your brand",
+      "Mobile-responsive, fast-loading pages",
+      "Domain name setup and registration",
+      "Ongoing updates and maintenance",
+    ],
+    href: "/intake.html",
+    cta: "Start your website brief",
+    external: true,
+  },
 ];
 
 const stack = [
@@ -57,12 +73,12 @@ const Services = () => {
             What we do
           </span>
           <h2 className="mt-4 font-display text-3xl font-bold text-off-white md:text-4xl lg:text-5xl">
-            Two kinds of work.
+            Three kinds of work.
           </h2>
         </motion.div>
 
-        {/* Two tracks */}
-        <div className="grid gap-px bg-off-white/10 md:grid-cols-2">
+        {/* Tracks */}
+        <div className="grid gap-px bg-off-white/10 md:grid-cols-2 lg:grid-cols-3">
           {tracks.map((track, index) => (
             <motion.div
               key={track.title}
@@ -96,13 +112,23 @@ const Services = () => {
               </ul>
 
               {track.href && (
-                <Link
-                  to={track.href}
-                  className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-accent transition-colors hover:text-off-white"
-                >
-                  {track.cta}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+                track.external ? (
+                  <a
+                    href={track.href}
+                    className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-accent transition-colors hover:text-off-white"
+                  >
+                    {track.cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    to={track.href}
+                    className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-accent transition-colors hover:text-off-white"
+                  >
+                    {track.cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                )
               )}
             </motion.div>
           ))}
