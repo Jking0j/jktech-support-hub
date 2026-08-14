@@ -47,10 +47,10 @@ const Header = () => {
           ))}
           <div className="h-4 w-px bg-border" />
           <a
-            href="mailto:support@jktechsolutions.com.au"
+            href="mailto:contact@jktechsolutions.com.au"
             className="text-xs font-medium uppercase tracking-wider text-accent hover:text-navy-deep transition-colors"
           >
-            support@jktechsolutions.com.au
+            contact@jktechsolutions.com.au
           </a>
           <button
             onClick={scrollToContact}
@@ -89,10 +89,10 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="mailto:support@jktechsolutions.com.au"
+                href="mailto:contact@jktechsolutions.com.au"
                 className="text-sm text-accent"
               >
-                support@jktechsolutions.com.au
+                contact@jktechsolutions.com.au
               </a>
               <button
                 onClick={scrollToContact}
