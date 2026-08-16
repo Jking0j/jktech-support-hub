@@ -21,7 +21,7 @@ const AIComplianceContact = () => {
 
     // Reuses the existing contact_enquiries table (no schema change needed) —
     // tagging the message so enquiries are filterable in the dashboard.
-    const message = `[AI Compliance Enquiry — ${practiceSize}]\n\n${rawMessage}`;
+    const message = `[AI Compliance Enquiry, ${practiceSize}]\n\n${rawMessage}`;
 
     const { error } = await supabase
       .from("contact_enquiries")
@@ -62,8 +62,8 @@ const AIComplianceContact = () => {
               Find out where you actually stand.
             </h2>
             <p className="mt-6 text-lg text-off-white/70">
-              A 30-minute call to understand your current tools and confirm a fixed
-              price — no obligation, and if it turns out you're not affected, you'll get
+              A 30 minute call to understand your current tools and confirm a fixed
+              price, no obligation, and if it turns out you're not affected, you'll get
               that in writing too.
             </p>
 
@@ -154,9 +154,9 @@ const AIComplianceContact = () => {
                   className="w-full border border-border bg-background px-4 py-3 text-sm text-navy-deep focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 >
                   <option value="" disabled>Select practice size</option>
-                  <option value="Solo (1-2)">Solo (1–2 practitioners)</option>
-                  <option value="Small Clinic (3-8)">Small Clinic (3–8 practitioners)</option>
-                  <option value="Multi-site (9+)">Multi-site (9+ practitioners)</option>
+                  <option value="Solo (1-2)">Solo (1 to 2 practitioners)</option>
+                  <option value="Small Clinic (3-8)">Small Clinic (3 to 8 practitioners)</option>
+                  <option value="Multi-site (9+)">Multi site (9+ practitioners)</option>
                 </select>
               </div>
 

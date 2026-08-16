@@ -8,7 +8,7 @@ const assumedRisky = [
 ];
 
 const actualRisk = [
-  "Intake triage & auto-routing",
+  "Intake triage & auto routing",
   "Waitlist / cancellation ranking",
   "Eligibility & funding screening",
 ];
@@ -33,7 +33,7 @@ const AIComplianceProblem = () => {
           <p className="mt-5 text-lg text-navy-mid">
             Most practices assume their documentation tool is the compliance risk. In
             practice, a tool that drafts a note for a clinician to review usually isn't
-            making a decision at all — the risk sits with tools that determine what
+            making a decision at all. The risk sits with tools that determine what
             happens next, before a patient has a say.
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ const AIComplianceProblem = () => {
               ))}
             </ul>
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-              Usually assistive, not decisional — provided a clinician genuinely reviews
+              Usually assistive, not decisional, provided a clinician genuinely reviews
               the output before it takes effect.
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ const AIComplianceProblem = () => {
               ))}
             </ul>
             <p className="mt-5 text-xs leading-relaxed text-off-white/60">
-              These affect a patient's access to a service — the exact trigger the new
+              These affect a patient's access to a service, the exact trigger the new
               disclosure rule is built around.
             </p>
           </motion.div>

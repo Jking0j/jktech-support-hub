@@ -4,20 +4,20 @@ import { Check } from "lucide-react";
 const tiers = [
   {
     name: "Solo",
-    subtitle: "1–2 practitioners",
+    subtitle: "1 to 2 practitioners",
     price: "$1,500",
     desc: "A fast, focused first pass.",
     featured: false,
   },
   {
     name: "Small Clinic",
-    subtitle: "3–8 practitioners",
-    price: "$2,800–3,500",
+    subtitle: "3 to 8 practitioners",
+    price: "$2,800 to $3,500",
     desc: "The right depth for a typical practice.",
     featured: true,
   },
   {
-    name: "Multi-site",
+    name: "Multi site",
     subtitle: "9+ practitioners",
     price: "From $4,500",
     desc: "Scoped per site.",
@@ -89,7 +89,7 @@ const AICompliancePricing = () => {
           <div className="flex items-start gap-3">
             <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" strokeWidth={2} />
             <p className="text-sm text-navy-mid">
-              <span className="font-bold text-navy-deep">Annual review retainer</span> — $1,200/yr
+              <span className="font-bold text-navy-deep">Annual review retainer:</span> $1,200/yr
               or $120/month. Keeps your register current as tools and guidance change.
             </p>
           </div>

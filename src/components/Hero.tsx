@@ -35,8 +35,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="mt-8 max-w-xl text-lg leading-relaxed text-navy-mid"
             >
-              Network infrastructure, secure decommissioning, and AI compliance —
-              handled by a degree-qualified engineer rather than a help desk script.
+              Network infrastructure, secure decommissioning, and AI compliance,
+              handled by a degree qualified engineer rather than a help desk script.
             </motion.p>
 
             <motion.div
@@ -79,7 +79,7 @@ const Hero = () => {
                   ["Infrastructure", "Switching, routing, firewalls, structured cabling"],
                   ["Decommissioning", "Device wipes and disposal to NIST 800-88 standards"],
                   ["Endpoint & domain", "Reimaging, Group Policy, Microsoft 365"],
-                  ["AI compliance", "Automated decision-making audits for allied health"],
+                  ["AI compliance", "Automated decision making audits for allied health"],
                 ].map(([term, detail]) => (
                   <div key={term} className="border-b border-border pb-5">
                     <dt className="font-mono text-xs font-medium uppercase tracking-wider text-accent">

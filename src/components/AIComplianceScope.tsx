@@ -28,12 +28,12 @@ const AIComplianceScope = () => {
               Scope, Plainly
             </span>
             <h2 className="font-display text-3xl font-bold text-navy-deep md:text-4xl lg:text-5xl">
-              What this is — and isn't.
+              What this is, and isn't.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-navy-mid">
               We say this upfront because a compliance service that overstates what it
               covers isn't one worth trusting. This is a technical assessment, built to
-              sit alongside your own legal advice — not instead of it.
+              sit alongside your own legal advice, not instead of it.
             </p>
 
             <div className="mt-10 rounded-sm border-l-4 border-accent bg-navy-deep p-6 shadow-elevated">

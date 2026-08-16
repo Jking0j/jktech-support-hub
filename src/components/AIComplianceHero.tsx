@@ -46,7 +46,7 @@ const AIComplianceHero = () => {
           className="mt-8 max-w-lg text-lg leading-relaxed text-navy-mid"
         >
           New Privacy Act amendments require Australian health providers to disclose
-          automated decision-making — with no small-business exemption. Most practices
+          automated decision making, with no small business exemption. Most practices
           don't yet know which of their tools are affected.
         </motion.p>
 
@@ -92,7 +92,7 @@ const AIComplianceHero = () => {
           </div>
           <div className="h-8 w-px bg-border" />
           <div>
-            <div className="font-display text-xl font-bold text-navy-deep">6-Part</div>
+            <div className="font-display text-xl font-bold text-navy-deep">6 Part</div>
             <div className="text-xs uppercase tracking-wider text-muted-foreground">Evidence Pack</div>
           </div>
         </motion.div>
@@ -124,7 +124,7 @@ const AIComplianceHero = () => {
             <div className="mb-6 flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/60">
-                AI Tool Register — Preview
+                AI Tool Register Preview
               </span>
             </div>
 

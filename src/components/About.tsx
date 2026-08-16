@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const facts = [
   {
     label: "Who does the work",
-    body: "A degree-qualified network engineer. You deal with the person doing the work, not an account manager relaying messages.",
+    body: "A degree qualified network engineer. You deal with the person doing the work, not an account manager relaying messages.",
   },
   {
     label: "Where we operate",
@@ -11,11 +11,11 @@ const facts = [
   },
   {
     label: "How engagements are structured",
-    body: "Month-to-month for ongoing support, fixed-scope quotes for projects and audits. No minimum term.",
+    body: "Month to month for ongoing support, fixed scope quotes for projects and audits. No minimum term.",
   },
   {
     label: "How we quote",
-    body: "Scope and price agreed in writing before work starts. If something changes mid-project, you hear about it before the invoice does.",
+    body: "Scope and price agreed in writing before work starts. If something changes mid project, you hear about it before the invoice does.",
   },
 ];
 
@@ -38,7 +38,7 @@ const About = () => {
               Small enough to be direct.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-navy-mid">
-              Most IT problems in a small business aren't complicated — they're just
+              Most IT problems in a small business aren't complicated, they're just
               nobody's job. The work here is straightforward: understand the setup,
               fix what's broken, and document what was done.
             </p>

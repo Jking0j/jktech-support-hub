@@ -10,7 +10,7 @@ const deliverables = [
   {
     icon: Share2,
     title: "Data Flow Map",
-    description: "Where information actually goes, tool by tool — the part that makes gaps visible.",
+    description: "Where information actually goes, tool by tool, the part that makes gaps visible.",
   },
   {
     icon: ShieldCheck,
@@ -20,7 +20,7 @@ const deliverables = [
   {
     icon: FileSearch,
     title: "ADM Assessment",
-    description: "A documented, reasoned position for every tool — in scope or not, and why.",
+    description: "A documented, reasoned position for every tool, in scope or not, and why.",
   },
   {
     icon: FileText,
@@ -52,7 +52,7 @@ const AIComplianceDeliverables = () => {
             Six documents. One clear position.
           </h2>
           <p className="mt-5 text-lg text-off-white/60">
-            Not a certificate — a working evidence pack your practice can maintain and
+            Not a certificate. A working evidence pack your practice can maintain and
             your lawyer can stand behind.
           </p>
         </motion.div>

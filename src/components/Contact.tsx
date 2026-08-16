@@ -12,13 +12,13 @@ const steps = [
   },
   {
     n: "02",
-    title: "On-site review",
+    title: "On site review",
     desc: "We come to you and go through the network, hardware, backups and access controls properly.",
   },
   {
     n: "03",
     title: "Written findings",
-    desc: "A plain-English list of what's sound, what's a risk, and what it would cost to address.",
+    desc: "A plain English list of what's sound, what's a risk, and what it would cost to address.",
   },
 ];
 

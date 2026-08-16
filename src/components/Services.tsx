@@ -6,7 +6,7 @@ const tracks = [
   {
     label: "01",
     title: "Managed IT & infrastructure",
-    audience: "Perth businesses, 5–50 staff",
+    audience: "Perth businesses, 5 to 50 staff",
     description:
       "Ongoing support, network design and hardening, hardware refreshes, and the infrastructure work that sits underneath it.",
     points: [
@@ -36,10 +36,10 @@ const tracks = [
     title: "Website design & builds",
     audience: "New and growing businesses",
     description:
-      "A custom-built website for your business, from a short brief through to a live, working site. No templates, no bloated page builders.",
+      "A custom built website for your business, from a short brief through to a live, working site. No templates, no bloated page builders.",
     points: [
       "Custom design matched to your brand",
-      "Mobile-responsive, fast-loading pages",
+      "Mobile responsive, fast loading pages",
       "Domain name setup and registration",
       "Ongoing updates and maintenance",
     ],
@@ -147,7 +147,7 @@ const Services = () => {
               Equipment and platforms
             </h3>
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/40">
-              Hands-on, in production environments
+              Hands on, in production environments
             </p>
           </motion.div>
 

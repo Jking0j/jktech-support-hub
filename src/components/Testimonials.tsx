@@ -4,7 +4,7 @@ const featured = {
   name: "Practice Manager",
   role: "Roleystone Family Medical Centre",
   content:
-    "They took over our entire IT setup and the difference is night and day. Our staff used to complain about IT weekly — now they don't even think about it. System outages are basically zero.",
+    "They took over our entire IT setup and the difference is night and day. Our staff used to complain about IT weekly, now they don't even think about it. System outages are basically zero.",
 };
 
 const others = [
@@ -22,7 +22,7 @@ const others = [
     name: "Lisa Thompson",
     role: "Small business, Gosnells",
     content:
-      "Network down Friday afternoon — back online the same afternoon. That's the response we needed.",
+      "Network down Friday afternoon, back online the same afternoon. That's the response we needed.",
   },
 ];
 
